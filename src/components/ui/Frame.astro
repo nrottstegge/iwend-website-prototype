@@ -1,0 +1,89 @@
+---
+import { hasImage } from '../../lib/content';
+import { withBase } from '../../lib/paths';
+
+interface Props {
+  src?: string;
+  alt?: string;
+  label?: string;
+  placeholder: string;
+  ratio?: string;
+  class?: string;
+}
+
+const { src, alt = '', label, placeholder, ratio = '3 / 2', class: className } = Astro.props;
+const image = hasImage(src) ? withBase(src!) : null;
+---
+
+<figure class:list={['frame', className]} style={`--ratio:${ratio}`}>
+  {image ? <img src={image} alt={alt} loading="lazy" decoding="async" /> : <div class="empty" role="img" aria-label={alt || placeholder} />}
+  <span class="corners" aria-hidden="true"></span>
+  {label && <figcaption class="mono label"><i></i>{label}</figcaption>}
+  {!image && <span class="mono note" aria-hidden="true">{placeholder}</span>}
+</figure>
+
+<style>
+  .frame {
+    position: relative;
+    margin: 0;
+    aspect-ratio: var(--ratio);
+    overflow: hidden;
+    background: var(--ink-3);
+  }
+  img,
+  .empty {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.4s var(--ease);
+  }
+  .frame:hover img {
+    transform: scale(1.03);
+  }
+  .empty {
+    background:
+      radial-gradient(ellipse at 50% 40%, rgb(229 37 33 / 0.1), transparent 60%),
+      repeating-linear-gradient(90deg, rgb(236 234 230 / 0.05) 0 1px, transparent 1px 48px),
+      repeating-linear-gradient(0deg, rgb(236 234 230 / 0.05) 0 1px, transparent 1px 48px),
+      var(--ink-2);
+  }
+  /* Viewfinder corner marks */
+  .corners {
+    position: absolute;
+    inset: 16px;
+    pointer-events: none;
+    --c: rgb(236 234 230 / 0.75);
+    background:
+      linear-gradient(var(--c), var(--c)) top left / 22px 1px,
+      linear-gradient(var(--c), var(--c)) top left / 1px 22px,
+      linear-gradient(var(--c), var(--c)) top right / 22px 1px,
+      linear-gradient(var(--c), var(--c)) top right / 1px 22px,
+      linear-gradient(var(--c), var(--c)) bottom left / 22px 1px,
+      linear-gradient(var(--c), var(--c)) bottom left / 1px 22px,
+      linear-gradient(var(--c), var(--c)) bottom right / 22px 1px,
+      linear-gradient(var(--c), var(--c)) bottom right / 1px 22px;
+    background-repeat: no-repeat;
+  }
+  .label {
+    position: absolute;
+    top: 26px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--on-dark);
+  }
+  .label i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+  .note {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    color: var(--on-dark-2);
+  }
+</style>

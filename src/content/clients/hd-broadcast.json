@@ -1,0 +1,7 @@
+{
+  "name": "HD Broadcast",
+  "logo": "/images/clients/hd-broadcast.png",
+  "background": "dark",
+  "visible": true,
+  "order": 11
+}

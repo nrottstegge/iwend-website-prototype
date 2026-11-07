@@ -1,0 +1,172 @@
+{
+  "de": {
+    "seoTitle": "iwend GmbH · Technisches Personal für TV-Produktionen und Liveübertragungen",
+    "seoDescription": "Kabelhilfe, Verkabelung, Bild- und Tonassistenz und technische Unterstützung für TV-Produktionen, Live-Sport und Außenübertragungen. iwend GmbH aus Bochum.",
+    "hero": {
+      "kicker": "Technisches Personal · TV & Live",
+      "headline": "Hinter jedem Live-Moment\nsteht ein Team, das funktioniert.",
+      "text": "Technisches Personal, präzise Verkabelung und zuverlässige Unterstützung für TV-Produktionen und Liveübertragungen.",
+      "ctaPrimary": "Produktion anfragen",
+      "ctaSecondary": "Leistungen entdecken",
+      "image": "/images/generated/hero-stadium.webp"
+    },
+    "showcases": {
+      "kicker": "Einsatzbereiche",
+      "title": "Drei Bühnen. Ein Anspruch.",
+      "items": [
+        {
+          "label": "Live-Entertainment",
+          "title": "Live.\nOhne Unterbrechung.",
+          "text": "Kabelhilfe, technische Assistenz und Umbauten, wenn jede Sekunde zählt.",
+          "tags": ["Kabelhilfe", "Technische Assistenz", "Umbauten"],
+          "image": "/images/generated/showcase-live.webp",
+          "imageAlt": "Kameramann an einer Studiokamera in einer Showkulisse, dahinter eine Kabelhilfe mit Kameraleitung"
+        },
+        {
+          "label": "Interview & Red Carpet",
+          "title": "Nah dran.\nImmer bereit.",
+          "text": "Bild- und Tonassistenz für Interviews, Moderationen und Außenproduktionen.",
+          "tags": ["Bildassistenz", "Tonassistenz", "Moderationspositionen"],
+          "image": "/images/generated/showcase-interview.webp",
+          "imageAlt": "Interviewposition mit Kamera, Licht und Tonassistenz am roten Teppich"
+        },
+        {
+          "label": "Stadion & Outside Broadcast",
+          "title": "Große Bühne.\nPräzise Technik.",
+          "text": "Von der ersten Kabelstrecke bis zum letzten Rückbau.",
+          "tags": ["Verkabelung", "Stageboxen", "Ü-Wagen", "Rückbau"],
+          "image": "/images/generated/showcase-stadium.webp",
+          "imageAlt": "Kamerapositionen am Spielfeldrand eines Stadions mit Kabeln und Flightcases"
+        }
+      ]
+    },
+    "services": {
+      "title": "Leistungen im Überblick",
+      "items": [
+        "Verkabelung von Kameras, Stageboxen und Ü-Wagen",
+        "Aufbau und Installation von Kameras und Übertragungstechnik",
+        "Kabelhilfe während Liveproduktionen",
+        "Technische Assistenz bei Liveübertragungen",
+        "Umsetzen von Kameras und Monitoren während der Produktion",
+        "Technische Betreuung von Interview- und Moderationspositionen",
+        "Bild- und Tonassistenz",
+        "Technische Umbauten während Liveshows",
+        "Produktionsvorbereitung und Location-Besichtigungen",
+        "Vollständiger Rückbau nach der Produktion"
+      ]
+    },
+    "clients": {
+      "kicker": "Netzwerk · Ruhrgebiet und darüber hinaus",
+      "title": "Unsere Kunden",
+      "text": "Vertrauen entsteht dort, wo es zählt: im laufenden Betrieb."
+    },
+    "team": {
+      "kicker": "Menschen",
+      "title": "Die Menschen hinter iwend",
+      "text": "Kurze Wege, klare Zuständigkeiten und Erfahrung aus Stadion, Studio und Außenproduktion.",
+      "leadsTitle": "Teamleitung / Einsatzleitung",
+      "leadsText": "Unsere Team- und Einsatzleitungen koordinieren die Crews vor Ort. Die Vorstellung folgt in Kürze."
+    },
+    "contact": {
+      "kicker": "Kontakt",
+      "title": "Die nächste Produktion steht an?",
+      "subtitle": "Wir stehen bereit.",
+      "text": "Ob einzelne Position oder komplettes Technikteam – wir stellen die passende Unterstützung für Ihre Produktion zusammen.",
+      "cta": "Jetzt anfragen",
+      "productionTypes": ["Live-Sport", "Show / Entertainment", "Studioproduktion", "Interview / Red Carpet", "Außenproduktion", "Event / Gottesdienst", "Sonstiges"],
+      "services": ["Verkabelung", "Kabelhilfe", "Bild- / Tonassistenz", "Auf- und Abbau", "Umbauten", "Teamleitung", "Komplettes Technikteam"]
+    },
+    "careers": {
+      "kicker": "Karriere",
+      "title": "Oder selbst mal dabei sein?",
+      "text": "Du willst nicht nur vor dem Fernseher dabei sein, sondern hinter den Kulissen mit anpacken? Werde Teil unseres Teams.",
+      "cta": "Karriere entdecken",
+      "image": "/images/generated/careers-crew.webp"
+    }
+  },
+  "en": {
+    "seoTitle": "iwend GmbH · Technical crew for TV productions and live broadcasts",
+    "seoDescription": "Cable assistance, cabling, camera and sound assistance and technical support for TV productions, live sports and outside broadcasts. iwend GmbH, Bochum, Germany.",
+    "hero": {
+      "kicker": "Technical crew · TV & live",
+      "headline": "Behind every live moment\nis a team that delivers.",
+      "text": "Technical personnel, precise cabling and reliable support for TV productions and live broadcasts.",
+      "ctaPrimary": "Request a crew",
+      "ctaSecondary": "Explore services",
+      "image": "/images/generated/hero-stadium.webp"
+    },
+    "showcases": {
+      "kicker": "Where we work",
+      "title": "Three stages. One standard.",
+      "items": [
+        {
+          "label": "Live entertainment",
+          "title": "Live.\nWithout interruption.",
+          "text": "Cable assistance, technical support and changeovers when every second counts.",
+          "tags": ["Cable assistance", "Technical support", "Changeovers"],
+          "image": "/images/generated/showcase-live.webp",
+          "imageAlt": "Camera operator at a studio camera on a show set, a cable assistant handling the camera cable behind"
+        },
+        {
+          "label": "Interview & red carpet",
+          "title": "Up close.\nAlways ready.",
+          "text": "Camera and sound assistance for interviews, presenter positions and outside productions.",
+          "tags": ["Camera assistance", "Sound assistance", "Presenter positions"],
+          "image": "/images/generated/showcase-interview.webp",
+          "imageAlt": "Interview position with camera, lighting and sound assistance on a red carpet"
+        },
+        {
+          "label": "Stadium & outside broadcast",
+          "title": "Big stage.\nPrecise engineering.",
+          "text": "From the first cable run to the final de-rig.",
+          "tags": ["Cabling", "Stageboxes", "OB vans", "De-rig"],
+          "image": "/images/generated/showcase-stadium.webp",
+          "imageAlt": "Pitchside camera positions in a stadium with cables and flight cases"
+        }
+      ]
+    },
+    "services": {
+      "title": "Services at a glance",
+      "items": [
+        "Cabling of cameras, stageboxes and OB vans",
+        "Rigging and installation of cameras and broadcast equipment",
+        "Cable assistance during live productions",
+        "Technical assistance during live broadcasts",
+        "Repositioning cameras and monitors during production",
+        "Technical support for interview and presenter positions",
+        "Camera and sound assistance",
+        "Technical changeovers during live shows",
+        "Production preparation and location recces",
+        "Complete de-rig after production"
+      ]
+    },
+    "clients": {
+      "kicker": "Network · The Ruhr and beyond",
+      "title": "Our clients",
+      "text": "Trust is earned where it matters: on air."
+    },
+    "team": {
+      "kicker": "People",
+      "title": "The people behind iwend",
+      "text": "Short lines of communication, clear responsibilities and experience from stadiums, studios and outside productions.",
+      "leadsTitle": "Crew leads",
+      "leadsText": "Our crew leads coordinate the teams on site. Introductions will follow shortly."
+    },
+    "contact": {
+      "kicker": "Contact",
+      "title": "Your next production is coming up?",
+      "subtitle": "We are ready.",
+      "text": "Whether a single position or a complete technical crew – we put together the right support for your production.",
+      "cta": "Send an enquiry",
+      "productionTypes": ["Live sports", "Show / entertainment", "Studio production", "Interview / red carpet", "Outside production", "Event / service", "Other"],
+      "services": ["Cabling", "Cable assistance", "Camera / sound assistance", "Rigging and de-rig", "Changeovers", "Crew lead", "Complete technical crew"]
+    },
+    "careers": {
+      "kicker": "Careers",
+      "title": "Want to be part of it?",
+      "text": "Not just watching on TV, but working behind the scenes? Join our team.",
+      "cta": "Explore careers",
+      "image": "/images/generated/careers-crew.webp"
+    }
+  }
+}

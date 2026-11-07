@@ -1,0 +1,309 @@
+---
+import { ANCHORS, UI, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  text: { kicker: string; title: string; subtitle: string; text: string; cta: string; productionTypes: string[]; services: string[] };
+  site: { company: string; street: string; zip: string; city: string; country: string; contactName: string; contactRole: string; email: string; phone: string };
+}
+
+const { lang, text, site } = Astro.props;
+const f = UI[lang].form;
+const tel = site.phone.replace(/\s/g, '');
+---
+
+<section id={ANCHORS[lang].contact} class="contact section" aria-labelledby="contact-title">
+  <div class="wrap grid">
+    <div class="intro" data-reveal>
+      <p class="mono kicker">{text.kicker}</p>
+      <h2 id="contact-title" class="display title">
+        <span>{text.title}</span>
+        <span class="red">{text.subtitle}</span>
+      </h2>
+      <p class="lead muted">{text.text}</p>
+
+      <dl class="card">
+        <dt class="mono">{UI[lang].contactPerson}</dt>
+        <dd>
+          <strong>{site.contactName}</strong><br /><span class="muted">{site.contactRole}</span>
+        </dd>
+        <dt class="mono">E-Mail</dt>
+        <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+        <dt class="mono">{lang === 'de' ? 'Telefon' : 'Phone'}</dt>
+        <dd><a href={`tel:${tel}`}>{site.phone}</a></dd>
+        <dt class="mono">{lang === 'de' ? 'Adresse' : 'Address'}</dt>
+        <dd>
+          {site.company}, {site.street}<br />{site.zip} {site.city}, {site.country}
+        </dd>
+      </dl>
+    </div>
+
+    <form
+      class="form"
+      action={`mailto:${site.email}`}
+      method="post"
+      enctype="text/plain"
+      novalidate
+      data-form
+      data-email={site.email}
+      data-subject={f.subject}
+      data-required={f.required}
+      data-reveal
+      style="--delay:.12s"
+    >
+      <div class="row">
+        <label>
+          <span>{f.name} *</span>
+          <input name="name" autocomplete="name" required />
+        </label>
+        <label>
+          <span>{f.company}</span>
+          <input name="company" autocomplete="organization" />
+        </label>
+      </div>
+      <div class="row">
+        <label>
+          <span>{f.email} *</span>
+          <input name="email" type="email" autocomplete="email" required data-msg={f.invalidEmail} />
+        </label>
+        <label>
+          <span>{f.phone}</span>
+          <input name="phone" type="tel" autocomplete="tel" />
+        </label>
+      </div>
+      <div class="row">
+        <label>
+          <span>{f.type}</span>
+          <select name="type">
+            <option value="">{f.choose}</option>
+            {text.productionTypes.map((t) => <option>{t}</option>)}
+          </select>
+        </label>
+        <label>
+          <span>{f.date}</span>
+          <input name="date" />
+        </label>
+      </div>
+      <label>
+        <span>{f.location}</span>
+        <input name="location" />
+      </label>
+      <fieldset>
+        <legend>{f.services}</legend>
+        <div class="chips">
+          {
+            text.services.map((s) => (
+              <label class="chip">
+                <input type="checkbox" name="services" value={s} />
+                <span>{s}</span>
+              </label>
+            ))
+          }
+        </div>
+      </fieldset>
+      <label>
+        <span>{f.message} *</span>
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <p class="hint">{f.note}</p>
+      <button class="btn btn--red" type="submit">{f.submit}</button>
+      <p class="status" role="status" aria-live="polite" data-status data-opened={`${f.opened} ${site.email}.`}></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  // Builds a prepared email from the form. No data leaves the browser except via the user's mail client.
+  const form = document.querySelector<HTMLFormElement>('[data-form]')!;
+  const status = form.querySelector<HTMLElement>('[data-status]')!;
+  const labelOf = (el: Element) => el.closest('label')?.querySelector('span')?.textContent?.replace(' *', '') ?? '';
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let firstInvalid: HTMLInputElement | HTMLTextAreaElement | null = null;
+    form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input:not([type=checkbox]), textarea').forEach((el) => {
+      el.value = el.value.trim();
+      const valid = el.checkValidity();
+      el.setAttribute('aria-invalid', String(!valid));
+      if (!valid && !firstInvalid) firstInvalid = el;
+    });
+    if (firstInvalid) {
+      const el = firstInvalid as HTMLInputElement;
+      status.textContent = `${labelOf(el)}: ${el.value ? el.dataset.msg ?? el.validationMessage : form.dataset.required}`;
+      status.classList.add('error');
+      el.focus();
+      return;
+    }
+    const data = new FormData(form);
+    const lines: string[] = [];
+    form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('input:not([type=checkbox]), select').forEach((el) => {
+      if (el.value) lines.push(`${labelOf(el)}: ${el.value}`);
+    });
+    const services = data.getAll('services');
+    if (services.length) lines.push(`${form.querySelector('legend')!.textContent}: ${services.join(', ')}`);
+    lines.push('', String(data.get('message')));
+    const company = data.get('company') ? ` – ${data.get('company')}` : '';
+    const subject = `${form.dataset.subject}${company}`;
+    location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+    status.classList.remove('error');
+    status.textContent = status.dataset.opened!;
+  });
+</script>
+
+<style>
+  .contact {
+    background: var(--ink-2);
+    border-top: 1px solid var(--line-dark);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 7vw, 120px);
+    align-items: start;
+  }
+  .intro {
+    display: grid;
+    gap: clamp(20px, 3vw, 32px);
+  }
+  .kicker {
+    color: var(--on-dark-2);
+  }
+  .title {
+    font-size: clamp(2.6rem, 6vw, 6.2rem);
+  }
+  .title span {
+    display: block;
+  }
+  .red {
+    color: var(--red);
+  }
+  .card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.9rem 1.5rem;
+    margin: 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line-dark);
+  }
+  dt {
+    color: var(--on-dark-2);
+    padding-top: 0.25em;
+  }
+  dd {
+    margin: 0;
+  }
+  dd a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--red);
+  }
+
+  .form {
+    display: grid;
+    gap: 18px;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  label,
+  fieldset {
+    display: grid;
+    gap: 6px;
+  }
+  label > span,
+  legend {
+    font: 500 0.72rem/1 var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--on-dark-2);
+  }
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  legend {
+    margin-bottom: 10px;
+  }
+  input,
+  select,
+  textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.7em 0.85em;
+    background: var(--ink);
+    color: var(--on-dark);
+    border: 1px solid var(--line-dark);
+    border-radius: 0;
+    font: inherit;
+  }
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--red);
+  }
+  [aria-invalid='true'] {
+    border-color: var(--red);
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    position: relative;
+    display: block;
+  }
+  .chip input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    min-height: 0;
+    cursor: pointer;
+  }
+  .chip span {
+    display: block;
+    padding: 0.6em 0.9em;
+    border: 1px solid var(--line-dark);
+    font-size: 0.9rem;
+    color: var(--on-dark-2);
+    transition: all 0.2s;
+  }
+  .chip input:checked + span {
+    border-color: var(--red);
+    background: rgb(229 37 33 / 0.14);
+    color: var(--on-dark);
+  }
+  .chip input:focus-visible + span {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+  }
+  .hint {
+    font-size: 0.85rem;
+    color: var(--on-dark-2);
+  }
+  button {
+    justify-self: start;
+    cursor: pointer;
+  }
+  .status:empty {
+    display: none;
+  }
+  .status {
+    padding: 0.8em 1em;
+    border-left: 2px solid var(--on-dark-2);
+    font-size: 0.95rem;
+  }
+  .status:global(.error) {
+    border-color: var(--red);
+  }
+
+  @media (max-width: 900px) {
+    .grid,
+    .row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

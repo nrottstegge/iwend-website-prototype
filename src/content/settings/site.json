@@ -1,0 +1,30 @@
+{
+  "de": {
+    "title": "iwend GmbH",
+    "description": "Technisches Personal, Verkabelung und Produktionsunterstützung für TV-Produktionen und Liveübertragungen. Aus Bochum, in NRW, deutschlandweit und international.",
+    "noindex": true,
+    "company": "iwend GmbH",
+    "street": "Breite Hille 30",
+    "zip": "44892",
+    "city": "Bochum",
+    "country": "Deutschland",
+    "contactName": "Marco Klinger",
+    "contactRole": "Disposition & Projektleitung",
+    "email": "dispo@iwend.de",
+    "phone": "+49 171 5444920"
+  },
+  "en": {
+    "title": "iwend GmbH",
+    "description": "Technical crew, cabling and production support for TV productions and live broadcasts. Based in Bochum, working across Germany and internationally.",
+    "noindex": true,
+    "company": "iwend GmbH",
+    "street": "Breite Hille 30",
+    "zip": "44892",
+    "city": "Bochum",
+    "country": "Germany",
+    "contactName": "Marco Klinger",
+    "contactRole": "Scheduling & Project Management",
+    "email": "dispo@iwend.de",
+    "phone": "+49 171 5444920"
+  }
+}

@@ -1,0 +1,162 @@
+---
+import Frame from '../ui/Frame.astro';
+import { ANCHORS, UI, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  showcases: {
+    kicker: string;
+    title: string;
+    items: { label: string; title: string; text: string; tags: string[]; image: string; imageAlt: string }[];
+  };
+  services: { title: string; items: string[] };
+}
+
+const { lang, showcases, services } = Astro.props;
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+
+<section id={ANCHORS[lang].services} class="showcases section" aria-labelledby="showcases-title">
+  <div class="wrap">
+    <header class="head" data-reveal>
+      <p class="mono kicker">{showcases.kicker}</p>
+      <h2 id="showcases-title" class="h2">{showcases.title}</h2>
+    </header>
+
+    <ol class="items">
+      {
+        showcases.items.map((item, i) => (
+          <li class:list={['item', { flip: i % 2 === 1 }]}>
+            <div class="media" data-reveal>
+              <Frame src={item.image} alt={item.imageAlt} label={`CAM ${pad(i + 1)} · ${item.label}`} placeholder={UI[lang].placeholder} ratio="16 / 10" />
+            </div>
+            <div class="text" data-reveal style="--delay:.12s">
+              <p class="index mono">
+                {pad(i + 1)} / {pad(showcases.items.length)}
+              </p>
+              <h3 class="h3 title">
+                {item.title.split('\n').map((l) => (
+                  <span>{l}</span>
+                ))}
+              </h3>
+              <p class="lead muted">{item.text}</p>
+              <ul class="tags mono">
+                {item.tags.map((t) => (
+                  <li>{t}</li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="services light section" aria-labelledby="services-title">
+  <div class="wrap cols">
+    <h2 id="services-title" class="h2" data-reveal>{services.title}</h2>
+    <ol class="list">
+      {
+        services.items.map((s, i) => (
+          <li data-reveal style={`--delay:${(i % 2) * 0.06}s`}>
+            <span class="mono n">{pad(i + 1)}</span>
+            {s}
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .head {
+    display: grid;
+    gap: 1.25rem;
+    margin-bottom: clamp(56px, 9vw, 120px);
+  }
+  .kicker {
+    color: var(--on-dark-2);
+  }
+  .items {
+    display: grid;
+    gap: clamp(88px, 12vw, 180px);
+  }
+  .item {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: clamp(20px, 3vw, 48px);
+    align-items: end;
+  }
+  .media {
+    grid-column: 1 / span 7;
+  }
+  .text {
+    grid-column: 8 / -1;
+    display: grid;
+    gap: 1.25rem;
+    padding-bottom: 0.5rem;
+  }
+  .flip .media {
+    grid-column: 6 / -1;
+    order: 2;
+  }
+  .flip .text {
+    grid-column: 1 / span 5;
+  }
+  .index {
+    color: var(--red);
+  }
+  .title {
+    font-size: clamp(2rem, 3.5vw, 3.7rem);
+  }
+  .title span {
+    display: block;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tags li {
+    border: 1px solid var(--line-dark);
+    padding: 0.45em 0.7em;
+    color: var(--on-dark-2);
+  }
+
+  .cols {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(32px, 6vw, 96px);
+    align-items: start;
+  }
+  .list {
+    border-top: 1px solid var(--line);
+  }
+  .list li {
+    display: grid;
+    grid-template-columns: 3.2rem 1fr;
+    align-items: baseline;
+    padding-block: 1.05rem;
+    border-bottom: 1px solid var(--line);
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+    font-weight: 500;
+  }
+  .n {
+    color: var(--red);
+  }
+
+  @media (max-width: 900px) {
+    .item,
+    .cols {
+      grid-template-columns: 1fr;
+    }
+    .media,
+    .text,
+    .flip .media,
+    .flip .text {
+      grid-column: 1 / -1;
+      order: 0;
+    }
+  }
+</style>

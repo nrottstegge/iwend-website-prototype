@@ -1,0 +1,19 @@
+# Dependencies & build output
+node_modules/
+dist/
+.astro/
+
+# Secrets – never commit
+.env
+.env.*
+!.env.example
+
+# Unreleased source material (see docs/images.md)
+content/raw-pictures/
+
+# Generated image masters (only optimised WebP in public/ is published)
+scripts/.cache/
+
+# OS / editor
+.DS_Store
+.vscode/

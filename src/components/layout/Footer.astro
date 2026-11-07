@@ -1,0 +1,92 @@
+---
+import Logo from '../ui/Logo.astro';
+import { UI, type Lang, type PageKey } from '../../i18n/ui';
+import { pageUrl } from '../../lib/paths';
+import { getSite } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+}
+
+const { lang, page } = Astro.props;
+const t = UI[lang];
+const site = await getSite(lang);
+const other: Lang = lang === 'de' ? 'en' : 'de';
+---
+
+<footer class="footer">
+  <div class="wrap grid">
+    <Logo class="logo" />
+    <address>
+      <strong>{site.company}</strong><br />
+      {site.street}<br />
+      {site.zip} {site.city}<br />
+      {site.country}
+    </address>
+    <p>
+      <a href={`mailto:${site.email}`}>{site.email}</a><br />
+      <a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a>
+    </p>
+    <ul class="links">
+      <li><a href={pageUrl('careers', lang)}>{t.nav.careers}</a></li>
+      <li><a href={pageUrl('imprint', lang)}>{t.imprint}</a></li>
+      <li><a href={pageUrl('privacy', lang)}>{t.privacy}</a></li>
+      <li><a href={pageUrl(page, other)} hreflang={other} lang={other}>{t.switchLang}</a></li>
+    </ul>
+  </div>
+  <div class="wrap base mono">
+    <span>© {new Date().getFullYear()} {site.company}</span>
+    <span>Bochum · NRW · DE</span>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--line-dark);
+    padding-block: clamp(56px, 8vw, 96px) 28px;
+    color: var(--on-dark-2);
+    font-size: 0.95rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .grid > :global(svg) {
+    width: clamp(120px, 14vw, 170px);
+    height: auto;
+  }
+  address {
+    font-style: normal;
+  }
+  strong {
+    color: var(--on-dark);
+    font-weight: 600;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--on-dark);
+  }
+  .links li + li {
+    margin-top: 0.2rem;
+  }
+  .base {
+    display: flex;
+    justify-content: space-between;
+    margin-top: clamp(48px, 7vw, 88px);
+    padding-top: 20px;
+    border-top: 1px solid var(--line-dark);
+  }
+  @media (max-width: 760px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .grid > :global(svg) {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

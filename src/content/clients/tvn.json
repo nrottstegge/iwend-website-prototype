@@ -1,0 +1,7 @@
+{
+  "name": "TVN",
+  "logo": "/images/clients/tvn.svg",
+  "background": "light",
+  "visible": true,
+  "order": 5
+}

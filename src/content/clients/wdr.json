@@ -1,0 +1,7 @@
+{
+  "name": "WDR",
+  "logo": "/images/clients/wdr.svg",
+  "background": "light",
+  "visible": true,
+  "order": 2
+}

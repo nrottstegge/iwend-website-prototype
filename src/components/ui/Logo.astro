@@ -1,0 +1,18 @@
+---
+import { LOGO_COLOR, LOGO_PATHS, LOGO_VIEWBOX, MARK_PATHS } from '../../lib/logo';
+
+interface Props {
+  variant?: 'full' | 'mark';
+  color?: string;
+  class?: string;
+  label?: string;
+}
+
+const { variant = 'full', color = LOGO_COLOR, class: className, label = 'iwend' } = Astro.props;
+const paths = variant === 'mark' ? MARK_PATHS : LOGO_PATHS;
+const viewBox = variant === 'mark' ? '0 0 250 333.85' : LOGO_VIEWBOX;
+---
+
+<svg class={className} viewBox={viewBox} role="img" aria-label={label} fill={color}>
+  {paths.map((d) => <path d={d} />)}
+</svg>

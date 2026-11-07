@@ -1,0 +1,305 @@
+# Sveltia CMS configuration – https://sveltiacms.app
+# Content models must match src/content.config.ts. See docs/cms.md.
+
+backend:
+  name: github
+  repo: nrottstegge/iwend-website-prototype
+  branch: main
+  commit_messages:
+    create: 'content: {{collection}} „{{slug}}“ anlegen'
+    update: 'content: {{collection}} „{{slug}}“ aktualisieren'
+    delete: 'content: {{collection}} „{{slug}}“ löschen'
+    uploadMedia: 'content: Medium „{{path}}“ hochladen'
+    deleteMedia: 'content: Medium „{{path}}“ löschen'
+
+# Uploads are stored in the repo and served from the site root (the base path is added by the site).
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+site_url: https://nrottstegge.github.io/iwend-website-prototype/
+display_url: https://nrottstegge.github.io/iwend-website-prototype/
+
+i18n:
+  structure: single_file
+  locales: [de, en]
+  default_locale: de
+
+collections:
+  # ── Pages ────────────────────────────────────────────────────────────────
+  - name: pages
+    label: Seiten
+    icon: description
+    i18n: true
+    files:
+      - name: home
+        label: Startseite
+        file: src/content/pages/home.json
+        format: json
+        i18n: true
+        fields:
+          - { name: seoTitle, label: SEO-Titel, widget: string, i18n: true }
+          - { name: seoDescription, label: SEO-Beschreibung, widget: text, i18n: true }
+          - name: hero
+            label: Hero (Einstieg)
+            widget: object
+            i18n: true
+            fields:
+              - { name: kicker, label: Kleine Zeile oben, widget: string, i18n: true }
+              - { name: headline, label: Headline (Zeilenumbruch = neue Zeile), widget: text, i18n: true }
+              - { name: text, label: Text, widget: text, i18n: true }
+              - { name: ctaPrimary, label: Button 1 (Anfrage), widget: string, i18n: true }
+              - { name: ctaSecondary, label: Button 2 (Leistungen), widget: string, i18n: true }
+              - { name: image, label: Hintergrundbild Stadion, widget: image, required: false, i18n: duplicate }
+          - name: showcases
+            label: Einsatzbereiche
+            widget: object
+            i18n: true
+            fields:
+              - { name: kicker, label: Kleine Zeile oben, widget: string, i18n: true }
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - name: items
+                label: Bereiche
+                widget: list
+                i18n: true
+                summary: '{{fields.label}}'
+                fields:
+                  - { name: label, label: Bezeichnung, widget: string, i18n: true }
+                  - { name: title, label: Headline (Zeilenumbruch = neue Zeile), widget: text, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+                  - { name: tags, label: Schlagworte, widget: list, i18n: true }
+                  - { name: image, label: Bild, widget: image, required: false, i18n: duplicate }
+                  - { name: imageAlt, label: Bildbeschreibung (Barrierefreiheit), widget: string, required: false, i18n: true }
+          - name: services
+            label: Leistungsliste
+            widget: object
+            i18n: true
+            fields:
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: items, label: Leistungen, widget: list, i18n: true }
+          - name: clients
+            label: Kunden (Texte)
+            widget: object
+            i18n: true
+            fields:
+              - { name: kicker, label: Kleine Zeile oben, widget: string, i18n: true }
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: text, label: Satz unter der Karte, widget: string, i18n: true }
+          - name: team
+            label: Team (Texte)
+            widget: object
+            i18n: true
+            fields:
+              - { name: kicker, label: Kleine Zeile oben, widget: string, i18n: true }
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: text, label: Text, widget: text, i18n: true }
+              - { name: leadsTitle, label: Überschrift Teamleitung, widget: string, i18n: true }
+              - { name: leadsText, label: "Text, solange keine Teamleitung eingetragen ist", widget: text, i18n: true }
+          - name: contact
+            label: Kontakt
+            widget: object
+            i18n: true
+            fields:
+              - { name: kicker, label: Kleine Zeile oben, widget: string, i18n: true }
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: subtitle, label: Unterzeile (rot), widget: string, i18n: true }
+              - { name: text, label: Text, widget: text, i18n: true }
+              - { name: cta, label: Button, widget: string, i18n: true }
+              - { name: productionTypes, label: Formular – Produktionsarten, widget: list, i18n: true }
+              - { name: services, label: Formular – Leistungen, widget: list, i18n: true }
+          - name: careers
+            label: Karriere-Teaser
+            widget: object
+            i18n: true
+            fields:
+              - { name: kicker, label: Kleine Zeile oben, widget: string, i18n: true }
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: text, label: Text, widget: text, i18n: true }
+              - { name: cta, label: Button, widget: string, i18n: true }
+              - { name: image, label: Bild, widget: image, required: false, i18n: duplicate }
+
+      - name: careers
+        label: Karriereseite
+        file: src/content/pages/careers.json
+        format: json
+        i18n: true
+        fields:
+          - { name: seoTitle, label: SEO-Titel, widget: string, i18n: true }
+          - { name: seoDescription, label: SEO-Beschreibung, widget: text, i18n: true }
+          - name: intro
+            label: Einstieg
+            widget: object
+            i18n: true
+            fields:
+              - { name: kicker, label: Kleine Zeile oben, widget: string, i18n: true }
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: text, label: Text, widget: text, i18n: true }
+              - { name: image, label: Bild, widget: image, required: false, i18n: duplicate }
+          - name: about
+            label: Arbeiten bei iwend
+            widget: object
+            i18n: true
+            fields:
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: text, label: Text, widget: text, i18n: true }
+          - name: activities
+            label: Typische Tätigkeiten
+            widget: object
+            i18n: true
+            fields:
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: note, label: Hinweis, widget: string, i18n: true }
+              - name: items
+                label: Tätigkeiten
+                widget: list
+                i18n: true
+                summary: '{{fields.title}}'
+                fields:
+                  - { name: title, label: Titel, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+          - name: process
+            label: Bewerbungsablauf
+            widget: object
+            i18n: true
+            fields:
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - name: steps
+                label: Schritte
+                widget: list
+                i18n: true
+                summary: '{{fields.title}}'
+                fields:
+                  - { name: title, label: Titel, widget: string, i18n: true }
+                  - { name: text, label: Text, widget: text, i18n: true }
+          - name: cta
+            label: Initiativbewerbung
+            widget: object
+            i18n: true
+            fields:
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: text, label: Text, widget: text, i18n: true }
+              - { name: button, label: Button, widget: string, i18n: true }
+              - { name: email, label: Bewerbungs-E-Mail, widget: string, i18n: duplicate }
+
+  # ── Open positions ───────────────────────────────────────────────────────
+  - name: jobs
+    label: Stellenangebote
+    label_singular: Stelle
+    icon: work
+    folder: src/content/jobs
+    extension: md
+    format: frontmatter
+    create: true
+    i18n:
+      structure: multiple_files
+    identifier_field: title
+    summary: '{{title}} · {{location}} · {{active | ternary("aktiv", "inaktiv")}}'
+    sortable_fields: [order, title, active]
+    fields:
+      - { name: title, label: Stellentitel, widget: string, i18n: true }
+      - { name: active, label: Veröffentlicht, widget: boolean, default: false, hint: Nur aktive Stellen erscheinen auf der Website., i18n: duplicate }
+      - { name: location, label: Einsatzort, widget: string, i18n: true }
+      - name: employment
+        label: Anstellungsart
+        widget: string
+        hint: z. B. Minijob, Teilzeit, Vollzeit, freie Mitarbeit
+        i18n: true
+      - { name: contactEmail, label: Bewerbungs-E-Mail (leer = Standard), widget: string, required: false, i18n: duplicate }
+      - { name: order, label: Reihenfolge (klein = oben), widget: number, value_type: int, default: 10, i18n: duplicate }
+      - { name: expires, label: Ablaufdatum (optional), widget: datetime, time_format: false, required: false, i18n: duplicate }
+      - { name: body, label: Beschreibung, widget: markdown, i18n: true }
+
+  # ── Team ─────────────────────────────────────────────────────────────────
+  - name: team
+    label: Team
+    label_singular: Person
+    icon: group
+    folder: src/content/team
+    extension: json
+    format: json
+    create: true
+    i18n: true
+    identifier_field: name
+    summary: '{{name}} – {{role}}'
+    sortable_fields: [order, name]
+    fields:
+      - { name: name, label: Name, widget: string, i18n: duplicate }
+      - { name: role, label: Rolle, widget: string, i18n: true }
+      - { name: text, label: Kurztext (optional), widget: text, required: false, i18n: true }
+      - name: group
+        label: Bereich
+        widget: select
+        options:
+          - { label: Geschäftsführung & Leitung, value: management }
+          - { label: Teamleitung / Einsatzleitung, value: leads }
+        i18n: duplicate
+      - { name: portrait, label: Porträt, widget: image, required: false, hint: Nur mit Einverständnis der Person veröffentlichen., i18n: duplicate }
+      - { name: visible, label: Sichtbar, widget: boolean, default: true, i18n: duplicate }
+      - { name: order, label: Reihenfolge, widget: number, value_type: int, default: 10, i18n: duplicate }
+
+  # ── Clients ──────────────────────────────────────────────────────────────
+  - name: clients
+    label: Kunden
+    label_singular: Kunde
+    icon: handshake
+    folder: src/content/clients
+    extension: json
+    format: json
+    create: true
+    identifier_field: name
+    summary: '{{name}}'
+    sortable_fields: [order, name]
+    media_folder: /public/images/clients
+    public_folder: /images/clients
+    fields:
+      - { name: name, label: Name, widget: string, required: false, hint: Wird beim Überfahren des Logos angezeigt. }
+      - { name: logo, label: Logo, widget: image, hint: SVG oder PNG mit transparentem Hintergrund. Logos nicht verändern. }
+      - name: background
+        label: Kachelhintergrund
+        widget: select
+        default: light
+        options:
+          - { label: Hell (für dunkle/farbige Logos), value: light }
+          - { label: Dunkel (für weiße Logos), value: dark }
+      - { name: visible, label: Sichtbar, widget: boolean, default: true }
+      - { name: order, label: Reihenfolge, widget: number, value_type: int, default: 100 }
+
+  # ── Settings & legal ─────────────────────────────────────────────────────
+  - name: settings
+    label: Einstellungen
+    icon: settings
+    i18n: true
+    files:
+      - name: site
+        label: Firma & Kontakt
+        file: src/content/settings/site.json
+        format: json
+        i18n: true
+        fields:
+          - { name: title, label: Website-Name, widget: string, i18n: duplicate }
+          - { name: description, label: Standard-Beschreibung (SEO), widget: text, i18n: true }
+          - { name: noindex, label: Vor Suchmaschinen verbergen (bis zum Livegang), widget: boolean, default: true, i18n: duplicate }
+          - { name: company, label: Firma, widget: string, i18n: duplicate }
+          - { name: street, label: Straße, widget: string, i18n: duplicate }
+          - { name: zip, label: PLZ, widget: string, i18n: duplicate }
+          - { name: city, label: Ort, widget: string, i18n: duplicate }
+          - { name: country, label: Land, widget: string, i18n: true }
+          - { name: contactName, label: Ansprechpartner, widget: string, i18n: duplicate }
+          - { name: contactRole, label: Funktion, widget: string, i18n: true }
+          - { name: email, label: E-Mail (Anfragen), widget: string, i18n: duplicate }
+          - { name: phone, label: Telefon, widget: string, i18n: duplicate }
+
+  - name: legal
+    label: Rechtliches
+    icon: gavel
+    folder: src/content/legal
+    extension: md
+    format: frontmatter
+    create: false
+    delete: false
+    i18n:
+      structure: multiple_files
+    identifier_field: title
+    fields:
+      - { name: title, label: Titel, widget: string, i18n: true }
+      - { name: description, label: SEO-Beschreibung, widget: string, required: false, i18n: true }
+      - { name: body, label: Text, widget: markdown, i18n: true }

@@ -1,0 +1,7 @@
+{
+  "name": "NDR",
+  "logo": "/images/clients/ndr.svg",
+  "background": "light",
+  "visible": true,
+  "order": 3
+}

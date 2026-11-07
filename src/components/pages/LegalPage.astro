@@ -1,0 +1,52 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import type { Lang } from '../../i18n/ui';
+import { getLegal, getSite } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  page: 'imprint' | 'privacy';
+}
+
+const { lang, page } = Astro.props;
+const [entry, site] = await Promise.all([getLegal(page, lang), getSite(lang)]);
+const { Content } = await render(entry);
+---
+
+<Base lang={lang} page={page} title={`${entry.data.title} · ${site.company}`} description={entry.data.description}>
+  <article class="legal light">
+    <div class="wrap">
+      <h1 class="h2">{entry.data.title}</h1>
+      <div class="prose"><Content /></div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .legal {
+    padding-block: calc(var(--header-h) + clamp(56px, 8vw, 120px)) var(--section);
+    min-height: 80vh;
+  }
+  .prose {
+    max-width: 44rem;
+    margin-top: clamp(32px, 5vw, 64px);
+  }
+  .prose :global(h2) {
+    font-size: 1.4rem;
+    font-stretch: 85%;
+    margin: 2.4rem 0 0.75rem;
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+  }
+  .prose :global(blockquote) {
+    margin: 0 0 2rem;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--red);
+    background: var(--white);
+  }
+  .prose :global(blockquote p) {
+    margin: 0;
+  }
+</style>

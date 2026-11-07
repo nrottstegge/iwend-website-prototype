@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../hero/Hero.astro';
+import Showcases from '../sections/Showcases.astro';
+import Clients from '../sections/Clients.astro';
+import Team from '../sections/Team.astro';
+import Contact from '../sections/Contact.astro';
+import CareersTeaser from '../sections/CareersTeaser.astro';
+import type { Lang } from '../../i18n/ui';
+import { getClients, getHome, getSite, getTeam } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const [home, site, clients, team] = await Promise.all([getHome(lang), getSite(lang), getClients(), getTeam(lang)]);
+---
+
+<Base lang={lang} page="home" title={home.seoTitle} description={home.seoDescription} image={home.hero.image}>
+  <Hero lang={lang} hero={home.hero} />
+  <Showcases lang={lang} showcases={home.showcases} services={home.services} />
+  <Clients lang={lang} text={home.clients} clients={clients} />
+  <Team lang={lang} text={home.team} members={team} />
+  <Contact lang={lang} text={home.contact} site={site} />
+  <CareersTeaser lang={lang} text={home.careers} />
+</Base>

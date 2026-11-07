@@ -1,0 +1,160 @@
+---
+import Logo from '../ui/Logo.astro';
+import { ANCHORS, UI, type Lang, type PageKey } from '../../i18n/ui';
+import { pageUrl } from '../../lib/paths';
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+}
+
+const { lang, page } = Astro.props;
+const t = UI[lang];
+const other: Lang = lang === 'de' ? 'en' : 'de';
+const a = ANCHORS[lang];
+const anchors = { services: `#${a.services}`, clients: `#${a.clients}`, team: `#${a.team}`, contact: `#${a.contact}` };
+const links = [
+  { label: t.nav.services, href: pageUrl('home', lang, anchors.services) },
+  { label: t.nav.clients, href: pageUrl('home', lang, anchors.clients) },
+  { label: t.nav.team, href: pageUrl('home', lang, anchors.team) },
+  { label: t.nav.careers, href: pageUrl('careers', lang), current: page === 'careers' },
+];
+---
+
+<header class:list={['header', { solid: page === 'imprint' || page === 'privacy' }]} data-header>
+  <div class="bar">
+    <a class="brand" href={pageUrl('home', lang)} aria-label="iwend – Start">
+      <Logo class="logo" />
+    </a>
+    <button class="toggle mono" type="button" aria-expanded="false" aria-controls="site-nav" data-toggle>
+      {t.menu}
+    </button>
+    <nav id="site-nav" class="nav" aria-label={lang === 'de' ? 'Hauptnavigation' : 'Main navigation'}>
+      <ul>
+        {links.map((l) => <li><a href={l.href} aria-current={l.current ? 'page' : undefined}>{l.label}</a></li>)}
+        <li>
+          <a class="lang mono" href={pageUrl(page, other)} hreflang={other} lang={other}>
+            <span aria-hidden="true">{other.toUpperCase()}</span>
+            <span class="visually-hidden">{t.switchLang}</span>
+          </a>
+        </li>
+        <li><a class="btn btn--red cta" href={pageUrl('home', lang, anchors.contact)}>{t.nav.contact}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]')!;
+  const toggle = header.querySelector<HTMLButtonElement>('[data-toggle]')!;
+  const setOpen = (open: boolean) => {
+    toggle.setAttribute('aria-expanded', String(open));
+    header.classList.toggle('is-open', open);
+  };
+  toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  header.querySelectorAll('.nav a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+  addEventListener('keydown', (e) => e.key === 'Escape' && setOpen(false));
+
+  const onScroll = () => header.classList.toggle('is-solid', scrollY > 24);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+
+<style>
+  .header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 50;
+    height: var(--header-h);
+    color: var(--on-dark);
+    transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease);
+    border-bottom: 1px solid transparent;
+  }
+  .header.solid,
+  .header:global(.is-solid),
+  .header:global(.is-open) {
+    background: rgb(11 12 14 / 0.88);
+    backdrop-filter: blur(12px);
+    border-color: var(--line-dark);
+  }
+  .bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: var(--gutter);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .brand :global(svg) {
+    height: 34px;
+    width: 73px;
+  }
+  .nav ul {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2.4vw, 2.25rem);
+  }
+  .nav a:not(.btn) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--on-dark-2);
+    transition: color 0.2s;
+  }
+  .nav a:not(.btn):hover,
+  .nav a[aria-current] {
+    color: var(--on-dark);
+  }
+  .cta {
+    min-height: 40px;
+    padding: 0.6em 1.1em;
+  }
+  .toggle {
+    display: none;
+    min-height: 44px;
+    padding: 0 0.25rem;
+    background: none;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  @media (max-width: 860px) {
+    .toggle {
+      display: block;
+    }
+    .nav {
+      position: fixed;
+      inset: var(--header-h) 0 auto;
+      background: rgb(11 12 14 / 0.97);
+      border-bottom: 1px solid var(--line-dark);
+      padding: 1rem var(--gutter) 2rem;
+      display: none;
+    }
+    .header:global(.is-open) .nav {
+      display: block;
+    }
+    .nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+    .nav a:not(.btn) {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-stretch: 80%;
+      text-transform: uppercase;
+      color: var(--on-dark);
+    }
+    .cta {
+      margin-top: 1rem;
+    }
+  }
+</style>

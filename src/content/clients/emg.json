@@ -1,0 +1,7 @@
+{
+  "name": "EMG",
+  "logo": "/images/clients/emg.jpg",
+  "background": "light",
+  "visible": true,
+  "order": 4
+}

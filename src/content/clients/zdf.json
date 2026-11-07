@@ -1,0 +1,7 @@
+{
+  "name": "ZDF",
+  "logo": "/images/clients/zdf.svg",
+  "background": "light",
+  "visible": true,
+  "order": 1
+}

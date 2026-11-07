@@ -1,0 +1,45 @@
+{
+  "style": "Photorealistic editorial photograph for a premium broadcast-engineering company website. Full-frame camera look, natural cinematic light, muted colours with deep blacks and a restrained red accent, fine film grain, shallow depth of field. Fictional scene. People only seen from behind, in silhouette or cropped so that no face is identifiable. No logos, no brand names, no club colours, no sponsor boards, no readable text or numbers, no screens with identifiable content.",
+  "images": [
+    {
+      "id": "hero-stadium",
+      "output": "public/images/generated/hero-stadium.webp",
+      "size": "1536x1024",
+      "usedIn": "Startseite – Hero (Hintergrund hinter dem Kameraplan)",
+      "references": ["1126274b-86f1-4dc5-a0bd-2d9ca4a708d3.jpg", "IMG_0630.jpeg", "IMG_4809.jpeg", "IMG_8539.jpeg"],
+      "prompt": "Wide, slightly elevated view across a large modern enclosed football stadium a few hours before a televised match. Steep, empty stands in dark neutral seats, a translucent roof carried by a steel truss structure, a perfectly striped green pitch. On the main stand in the foreground a broadcast camera platform with a camera on a tripod, thin black cables running neatly along the railing. Calm, dusky light, low contrast in the shadows so that text can be placed over the image."
+    },
+    {
+      "id": "showcase-live",
+      "output": "public/images/generated/showcase-live.webp",
+      "size": "1536x1024",
+      "usedIn": "Startseite – Einsatzbereich 01 Live-Entertainment",
+      "references": ["PHOTO-2026-11-07-11-39-09 2.jpg", "PHOTO-2026-11-07-11-39-09 4.jpg", "PHOTO-2026-11-07-11-39-09 5.jpg", "IMG_8177.jpeg"],
+      "prompt": "Studio floor of a large live entertainment television show. A camera operator, seen from behind, works a studio camera on a pedestal with a large box lens. Behind him a cable assistant, also seen from behind and slightly crouched, guides the thick black camera cable, which lies in tidy figure-eight loops on the glossy dark floor. Magenta and violet stage lighting, soft haze, an out-of-focus LED wall producing bokeh in the background."
+    },
+    {
+      "id": "showcase-interview",
+      "output": "public/images/generated/showcase-interview.webp",
+      "size": "1536x1024",
+      "usedIn": "Startseite – Einsatzbereich 02 Interview & Red Carpet",
+      "references": ["IMG_8225.jpeg", "IMG_0474.jpeg", "IMG_8127.jpeg"],
+      "prompt": "Interview position on a red carpet at an evening premiere. A professional broadcast camera on a tripod with a small LED panel light, a sound assistant holding a boom microphone over the scene, a presenter seen from behind holding a handheld microphone, a small field monitor on a stand showing an abstract out-of-focus image. Red carpet, plain blurred backdrop wall without any logos, warm evening light mixed with cool camera light."
+    },
+    {
+      "id": "showcase-stadium",
+      "output": "public/images/generated/showcase-stadium.webp",
+      "size": "1536x1024",
+      "usedIn": "Startseite – Einsatzbereich 03 Stadion & Outside Broadcast",
+      "references": ["IMG_0630.jpeg", "IMG_6561.jpeg", "PHOTO-2026-11-07-11-33-11.jpg", "IMG_1681.jpeg"],
+      "prompt": "Pitch side of a large football stadium during broadcast set-up. Several broadcast cameras on tripods with long telephoto lenses, black flight cases and a stagebox on the ground, cables neatly routed along the edge of the pitch. Two technicians in black work clothes seen from behind, empty stands, overcast daylight. Through an open stadium gate in the background, a compound of parked white outside-broadcast trucks."
+    },
+    {
+      "id": "careers-crew",
+      "output": "public/images/generated/careers-crew.webp",
+      "size": "1024x1536",
+      "usedIn": "Startseite – Karriere-Teaser, Karriereseite – Einstieg",
+      "references": ["PHOTO-2026-11-07-11-33-27.jpg", "PHOTO-2026-11-07-11-33-36.jpg", "PHOTO-2026-11-07-11-33-11.jpg"],
+      "prompt": "Backstage service corridor of an arena shortly before a live TV broadcast. A young crew member, seen from behind, in black work clothes and work gloves carries a black cable drum wound with thick camera cable. Flight cases stacked along the wall, bright work lights, a slight sense of motion and energy."
+    }
+  ]
+}

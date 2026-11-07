@@ -1,0 +1,249 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Frame from '../ui/Frame.astro';
+import { UI, type Lang } from '../../i18n/ui';
+import { getCareers, getJobs, getSite } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = UI[lang].jobs;
+const [page, site, jobEntries] = await Promise.all([getCareers(lang), getSite(lang), getJobs(lang)]);
+const jobs = await Promise.all(jobEntries.map(async (j) => ({ ...j.data, id: j.id, Content: (await render(j)).Content })));
+const pad = (n: number) => String(n).padStart(2, '0');
+const date = (d: Date) => d.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-GB', { dateStyle: 'long' });
+const mail = (email: string, subject: string) => `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+---
+
+<Base lang={lang} page="careers" title={page.seoTitle} description={page.seoDescription} image={page.intro.image}>
+  <section class="intro">
+    <div class="wrap grid">
+      <div class="copy" data-reveal>
+        <p class="mono kicker">{page.intro.kicker}</p>
+        <h1 class="display">{page.intro.title}</h1>
+        <p class="lead muted">{page.intro.text}</p>
+      </div>
+      <div data-reveal style="--delay:.12s">
+        <Frame src={page.intro.image} alt="" label="Crew · Live" placeholder={UI[lang].placeholder} ratio="4 / 5" />
+      </div>
+    </div>
+  </section>
+
+  <section class="light section">
+    <div class="wrap cols">
+      <h2 class="h2" data-reveal>{page.about.title}</h2>
+      <p class="lead" data-reveal>{page.about.text}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <header class="head" data-reveal>
+        <h2 class="h2">{page.activities.title}</h2>
+        <p class="mono muted">{page.activities.note}</p>
+      </header>
+      <ol class="activities">
+        {
+          page.activities.items.map((a, i) => (
+            <li data-reveal style={`--delay:${(i % 3) * 0.06}s`}>
+              <span class="mono red">{pad(i + 1)}</span>
+              <h3>{a.title}</h3>
+              <p class="muted">{a.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="light section" aria-labelledby="jobs-title">
+    <div class="wrap">
+      <h2 id="jobs-title" class="h2" data-reveal>{t.open}</h2>
+      {
+        jobs.length ? (
+          <ul class="jobs">
+            {jobs.map((j) => (
+              <li class="job" data-reveal>
+                <details>
+                  <summary>
+                    <span class="job-title">{j.title}</span>
+                    <span class="mono meta">
+                      {j.location} · {j.employment}
+                    </span>
+                  </summary>
+                  <div class="job-body">
+                    <j.Content />
+                    {j.expires && (
+                      <p class="mono muted">
+                        {t.until}: {date(j.expires)}
+                      </p>
+                    )}
+                    <a class="btn btn--red" href={mail(j.contactEmail || page.cta.email, j.title)}>
+                      {t.apply}
+                    </a>
+                  </div>
+                </details>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div class="empty" data-reveal>
+            <p class="lead">{t.none}</p>
+            <a class="btn btn--ghost" href="#apply">{page.cta.title}</a>
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="h2 head" data-reveal>{page.process.title}</h2>
+      <ol class="steps">
+        {
+          page.process.steps.map((s, i) => (
+            <li data-reveal style={`--delay:${i * 0.08}s`}>
+              <span class="mono red">STEP {pad(i + 1)}</span>
+              <h3>{s.title}</h3>
+              <p class="muted">{s.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section id="apply" class="apply">
+    <div class="wrap" data-reveal>
+      <h2 class="display">{page.cta.title}</h2>
+      <p class="lead">{page.cta.text}</p>
+      <a class="btn btn--dark" href={mail(page.cta.email, page.cta.title)}>{page.cta.button}</a>
+      <p class="mono small">{page.cta.email} · {site.phone}</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .intro {
+    padding-block: calc(var(--header-h) + clamp(48px, 8vw, 120px)) var(--section);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: clamp(32px, 6vw, 96px);
+    align-items: end;
+  }
+  .copy,
+  .head {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .head {
+    margin-bottom: clamp(40px, 6vw, 80px);
+  }
+  .kicker {
+    color: var(--on-dark-2);
+  }
+  .cols {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(32px, 6vw, 96px);
+  }
+  .red {
+    color: var(--red);
+  }
+  h3 {
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  }
+  .activities,
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line-dark);
+  }
+  .activities li,
+  .steps li {
+    display: grid;
+    align-content: start;
+    gap: 0.9rem;
+    padding: clamp(24px, 3vw, 40px) clamp(16px, 2vw, 28px) clamp(32px, 4vw, 56px) 0;
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .jobs {
+    margin-top: clamp(32px, 5vw, 64px);
+    border-top: 1px solid var(--line);
+  }
+  .job {
+    border-bottom: 1px solid var(--line);
+  }
+  summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem 2rem;
+    padding-block: 1.5rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  .job-title {
+    font-size: clamp(1.5rem, 3vw, 2.6rem);
+    font-weight: 800;
+    font-stretch: 78%;
+    text-transform: uppercase;
+  }
+  .meta {
+    color: var(--muted);
+  }
+  .job-body {
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
+    max-width: 44rem;
+    padding-bottom: 2rem;
+  }
+  .empty {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: start;
+    margin-top: clamp(32px, 5vw, 64px);
+    padding: clamp(28px, 4vw, 48px);
+    border: 1px dashed var(--line-strong, rgb(14 16 20 / 0.3));
+  }
+  .apply {
+    background: var(--red);
+    color: var(--white);
+    padding-block: var(--section);
+  }
+  .apply .wrap {
+    display: grid;
+    gap: clamp(20px, 3vw, 32px);
+    justify-items: start;
+  }
+  .btn--dark {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--white);
+  }
+  .btn--dark:hover {
+    background: var(--white);
+    color: var(--ink);
+  }
+  .small {
+    opacity: 0.8;
+  }
+  @media (max-width: 900px) {
+    .grid,
+    .cols,
+    .activities,
+    .steps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

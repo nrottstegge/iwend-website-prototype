@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import { pageUrl } from '../lib/paths';
+---
+
+<Base lang="de" page="home" title="404 · iwend GmbH">
+  <section class="nf">
+    <div class="wrap">
+      <p class="mono kicker">No signal · 404</p>
+      <h1 class="display">Kein Signal.</h1>
+      <p class="lead muted">Diese Seite gibt es nicht. / This page does not exist.</p>
+      <p class="links">
+        <a class="btn btn--red" href={pageUrl('home', 'de')}>Startseite</a>
+        <a class="btn btn--ghost" href={pageUrl('home', 'en')}>Home</a>
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf {
+    min-height: 80vh;
+    display: grid;
+    align-items: center;
+    padding-top: var(--header-h);
+  }
+  .wrap {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .links {
+    display: flex;
+    gap: 12px;
+  }
+</style>

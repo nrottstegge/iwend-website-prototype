@@ -1,0 +1,66 @@
+---
+import Frame from '../ui/Frame.astro';
+import { UI, type Lang } from '../../i18n/ui';
+import { pageUrl } from '../../lib/paths';
+
+interface Props {
+  lang: Lang;
+  text: { kicker: string; title: string; text: string; cta: string; image: string };
+}
+
+const { lang, text } = Astro.props;
+---
+
+<section class="teaser" aria-labelledby="careers-teaser-title">
+  <div class="wrap grid">
+    <div class="copy" data-reveal>
+      <p class="mono kicker">{text.kicker}</p>
+      <h2 id="careers-teaser-title" class="display">{text.title}</h2>
+      <p class="lead">{text.text}</p>
+      <a class="btn btn--dark" href={pageUrl('careers', lang)}>{text.cta}</a>
+    </div>
+    <div data-reveal style="--delay:.12s">
+      <Frame src={text.image} alt="" label="Crew · Backstage" placeholder={UI[lang].placeholder} ratio="4 / 5" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .teaser {
+    background: var(--red);
+    color: var(--white);
+    padding-block: var(--section);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: clamp(32px, 6vw, 96px);
+    align-items: center;
+  }
+  .copy {
+    display: grid;
+    gap: clamp(20px, 3vw, 32px);
+    justify-items: start;
+  }
+  .kicker::before {
+    background: var(--white);
+  }
+  .display {
+    font-size: clamp(2.8rem, 7.4vw, 7.4rem);
+  }
+  .btn--dark {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--white);
+  }
+  .btn--dark:hover {
+    background: var(--white);
+    color: var(--ink);
+    border-color: var(--white);
+  }
+  @media (max-width: 860px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

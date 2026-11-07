@@ -1,0 +1,30 @@
+{
+  "name": "iwend-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Website of iwend GmbH – technical personnel for TV productions and live broadcasts (DE/EN).",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "vitest run",
+    "images": "node --env-file=.env scripts/generate-images.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "5.3.0",
+    "@fontsource-variable/geist-mono": "5.3.0",
+    "astro": "7.4.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@types/node": "^24.19.2",
+    "sharp": "0.35.5",
+    "typescript": "5.9.3",
+    "vitest": "3.2.7"
+  }
+}

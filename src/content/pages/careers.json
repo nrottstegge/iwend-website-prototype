@@ -1,0 +1,80 @@
+{
+  "de": {
+    "seoTitle": "Karriere · iwend GmbH",
+    "seoDescription": "Arbeiten hinter den Kulissen von TV-Produktionen und Liveübertragungen: Kabelhilfe, Produktionsassistenz, Bild- und Tonassistenz, Auf- und Abbau.",
+    "intro": {
+      "kicker": "Karriere bei iwend",
+      "title": "Hinter den Kulissen mit anpacken.",
+      "text": "Liveproduktionen leben von Menschen, die mitdenken, sauber arbeiten und auch nach einem langen Produktionstag konzentriert bleiben. Genau diese Menschen suchen wir.",
+      "image": "/images/generated/careers-crew.webp"
+    },
+    "about": {
+      "title": "Was Arbeiten bei iwend bedeutet",
+      "text": "Du bist Teil einer Crew, die Kameras verkabelt, Positionen aufbaut und während der Sendung dafür sorgt, dass alles läuft. Die Einsätze sind vielfältig – vom Studio über Sportveranstaltungen bis zur Außenproduktion. Du arbeitest mit erfahrenen Kolleginnen und Kollegen und lernst die Abläufe professioneller TV-Produktionen von Grund auf kennen."
+    },
+    "activities": {
+      "title": "Typische Tätigkeiten",
+      "note": "Beispielhafte Tätigkeitsfelder – keine aktuellen Stellenausschreibungen.",
+      "items": [
+        { "title": "Kabelhilfe / Kabelträger", "text": "Du führst Kamerakabel während der Sendung, hältst Wege frei und sorgst dafür, dass die Kamera sich frei bewegen kann." },
+        { "title": "Technische Produktionsassistenz", "text": "Du unterstützt beim Einrichten von Kamera- und Monitorpositionen und bei Umbauten während der Produktion." },
+        { "title": "Bild- und Tonassistenz", "text": "Du assistierst an Interview- und Moderationspositionen – mit Kabel, Licht, Mikrofon und Blick für das Detail." },
+        { "title": "Auf- und Abbau", "text": "Du verlegst Kabelstrecken, verbindest Stageboxen und baust nach der Produktion alles sauber zurück." },
+        { "title": "Teamleitung", "text": "Mit Erfahrung koordinierst du eine Crew vor Ort und bist Ansprechperson für die Produktion." }
+      ]
+    },
+    "process": {
+      "title": "So läuft die Bewerbung",
+      "steps": [
+        { "title": "Kurz vorstellen", "text": "Schick uns ein paar Zeilen zu dir, deiner Erfahrung und deiner Verfügbarkeit." },
+        { "title": "Kennenlernen", "text": "Wir melden uns und sprechen kurz telefonisch oder persönlich." },
+        { "title": "Erster Einsatz", "text": "Du startest an der Seite erfahrener Kolleginnen und Kollegen." }
+      ]
+    },
+    "cta": {
+      "title": "Initiativ bewerben",
+      "text": "Keine passende Stelle dabei? Schreib uns trotzdem – wir freuen uns über Menschen mit Technikbegeisterung und Zuverlässigkeit.",
+      "button": "Initiativbewerbung senden",
+      "email": "dispo@iwend.de"
+    }
+  },
+  "en": {
+    "seoTitle": "Careers · iwend GmbH",
+    "seoDescription": "Working behind the scenes of TV productions and live broadcasts: cable assistance, production assistance, camera and sound assistance, rigging and de-rig.",
+    "intro": {
+      "kicker": "Careers at iwend",
+      "title": "Get hands-on behind the scenes.",
+      "text": "Live productions depend on people who think ahead, work cleanly and stay focused even after a long production day. Those are the people we are looking for.",
+      "image": "/images/generated/careers-crew.webp"
+    },
+    "about": {
+      "title": "What working at iwend means",
+      "text": "You are part of a crew that cables cameras, sets up positions and makes sure everything runs during the broadcast. Assignments vary – from studios to sports events to outside productions. You work alongside experienced colleagues and learn how professional TV productions run from the ground up."
+    },
+    "activities": {
+      "title": "Typical activities",
+      "note": "Example fields of work – not current vacancies.",
+      "items": [
+        { "title": "Cable assistant", "text": "You guide camera cables during the broadcast, keep paths clear and make sure the camera can move freely." },
+        { "title": "Technical production assistant", "text": "You help set up camera and monitor positions and support changeovers during production." },
+        { "title": "Camera and sound assistant", "text": "You assist at interview and presenter positions – with cable, light, microphone and an eye for detail." },
+        { "title": "Rigging and de-rig", "text": "You lay cable runs, connect stageboxes and cleanly de-rig everything after the production." },
+        { "title": "Crew lead", "text": "With experience, you coordinate a crew on site and are the contact person for the production." }
+      ]
+    },
+    "process": {
+      "title": "How to apply",
+      "steps": [
+        { "title": "Introduce yourself", "text": "Send us a few lines about yourself, your experience and your availability." },
+        { "title": "Get to know us", "text": "We get back to you for a short call or meeting." },
+        { "title": "First assignment", "text": "You start alongside experienced colleagues." }
+      ]
+    },
+    "cta": {
+      "title": "Speculative application",
+      "text": "No suitable position listed? Write to us anyway – we are always glad to hear from reliable people who love technology.",
+      "button": "Send application",
+      "email": "dispo@iwend.de"
+    }
+  }
+}

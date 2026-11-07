@@ -1,0 +1,7 @@
+{
+  "name": "Betamobil",
+  "logo": "/images/clients/betamobil.png",
+  "background": "light",
+  "visible": true,
+  "order": 10
+}

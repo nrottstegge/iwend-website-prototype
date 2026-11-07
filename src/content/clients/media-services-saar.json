@@ -1,0 +1,7 @@
+{
+  "name": "media services saar",
+  "logo": "/images/clients/media-services-saar.png",
+  "background": "light",
+  "visible": true,
+  "order": 15
+}
