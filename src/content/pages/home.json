@@ -15,6 +15,19 @@
       "title": "Komplexes Umfeld. Ein Anspruch.",
       "items": [
         {
+          "label": "Aufbau & Verkabelung",
+          "title": "Große Bühne.\nPräzise Technik.",
+          "text": "Saubere Kabelwege vom Ü-Wagen bis zur letzten Kameraposition – von der ersten Kabelstrecke bis zum letzten Rückbau.",
+          "tags": [
+            "Verkabelung",
+            "Stageboxen",
+            "Ü-Wagen",
+            "Rückbau"
+          ],
+          "image": "/images/generated/showcase-stadium.webp",
+          "imageAlt": "iwend-Team verlegt am Spielfeldrand eines Stadions Kamerakabel in sauberen, parallelen Strängen"
+        },
+        {
           "label": "Live-Entertainment",
           "title": "Live.\nOhne Unterbrechung.",
           "text": "Kabelhilfe, technische Assistenz und Umbauten, wenn jede Sekunde zählt.",
@@ -24,32 +37,19 @@
             "Umbauten"
           ],
           "image": "/images/generated/showcase-live.webp",
-          "imageAlt": "Kameramann an einer Studiokamera in einer Showkulisse, dahinter eine Kabelhilfe mit Kameraleitung"
+          "imageAlt": "Kabelhilfe von iwend führt das Kamerakabel hinter einem Kameramann in einer Liveshow"
         },
         {
-          "label": "Interview & Red Carpet",
-          "title": "Nah dran.\nImmer bereit.",
-          "text": "Bild- und Tonassistenz für Interviews, Moderationen und Außenproduktionen.",
+          "label": "Assistenz",
+          "title": "Vielfältig.\nImmer bereit.",
+          "text": "Bild- und Tonassistenz für Interviews, Moderationen und Außenproduktionen – am roten Teppich wie am Spielfeldrand.",
           "tags": [
             "Bildassistenz",
             "Tonassistenz",
             "Moderationspositionen"
           ],
           "image": "/images/generated/showcase-interview.webp",
-          "imageAlt": "Interviewposition mit Kamera, Licht und Tonassistenz am roten Teppich"
-        },
-        {
-          "label": "Stadion & Outside Broadcast",
-          "title": "Große Bühne.\nPräzise Technik.",
-          "text": "Von der ersten Kabelstrecke bis zum letzten Rückbau.",
-          "tags": [
-            "Verkabelung",
-            "Stageboxen",
-            "Ü-Wagen",
-            "Rückbau"
-          ],
-          "image": "/images/generated/showcase-stadium.webp",
-          "imageAlt": "Kamerapositionen am Spielfeldrand eines Stadions mit Kabeln und Flightcases"
+          "imageAlt": "Moderatorin am roten Teppich, im Vordergrund ein Tonassistent von iwend mit Tonangel"
         }
       ]
     },
@@ -129,6 +129,19 @@
       "title": "Complex settings. One standard.",
       "items": [
         {
+          "label": "Rigging & cabling",
+          "title": "Big stage.\nPrecise engineering.",
+          "text": "Clean cable runs from the OB van to the last camera position – from the first cable run to the final de-rig.",
+          "tags": [
+            "Cabling",
+            "Stageboxes",
+            "OB vans",
+            "De-rig"
+          ],
+          "image": "/images/generated/showcase-stadium.webp",
+          "imageAlt": "iwend crew laying camera cables in neat parallel runs along the pitch of a stadium"
+        },
+        {
           "label": "Live entertainment",
           "title": "Live.\nWithout interruption.",
           "text": "Cable assistance, technical support and changeovers when every second counts.",
@@ -138,32 +151,19 @@
             "Changeovers"
           ],
           "image": "/images/generated/showcase-live.webp",
-          "imageAlt": "Camera operator at a studio camera on a show set, a cable assistant handling the camera cable behind"
+          "imageAlt": "iwend cable assistant guiding the camera cable behind a camera operator during a live show"
         },
         {
-          "label": "Interview & red carpet",
-          "title": "Up close.\nAlways ready.",
-          "text": "Camera and sound assistance for interviews, presenter positions and outside productions.",
+          "label": "Assistance",
+          "title": "Versatile.\nAlways ready.",
+          "text": "Camera and sound assistance for interviews, presenter positions and outside productions – on the red carpet and at the pitch.",
           "tags": [
             "Camera assistance",
             "Sound assistance",
             "Presenter positions"
           ],
           "image": "/images/generated/showcase-interview.webp",
-          "imageAlt": "Interview position with camera, lighting and sound assistance on a red carpet"
-        },
-        {
-          "label": "Stadium & outside broadcast",
-          "title": "Big stage.\nPrecise engineering.",
-          "text": "From the first cable run to the final de-rig.",
-          "tags": [
-            "Cabling",
-            "Stageboxes",
-            "OB vans",
-            "De-rig"
-          ],
-          "image": "/images/generated/showcase-stadium.webp",
-          "imageAlt": "Pitchside camera positions in a stadium with cables and flight cases"
+          "imageAlt": "Presenter on the red carpet, an iwend sound assistant with a boom pole in the foreground"
         }
       ]
     },

@@ -31,6 +31,10 @@ der Person freigeben lassen. Bis dahin zeigt die Website die Initialen.
 **Hero in hoher Auflösung:** `scripts/upscale-hero.mjs` rendert das freigegebene Stadionbild über den
 Edit-Endpunkt in 2560×1600 neu, ohne den Inhalt zu ändern.
 
+**Einsatzbereiche mit iwend-Kleidung:** Die drei Szenen zeigen das Team in schwarzer Kleidung mit iwend-Logo.
+Weil die Bild-KI das Logo frei erfindet, ersetzt `scripts/brand-fix.mjs` den Aufdruck in einem zweiten Schritt
+durch das echte Logo (`content/Logo/iwend Logo.svg` als Referenzbild). Ergebnis immer auf korrekten Schriftzug prüfen.
+
 **Steckerbilder:** `connectors` in `scripts/image-briefs.json` – generische Studio-Produktfotos ohne
 Herstellernamen, erscheinen auf der Karriereseite beim Überfahren der Kabeltypen.
 
@@ -58,7 +62,7 @@ Das Original (1600×900) bleibt unverändert. Danach KI-Hochskalierung auf 2560�
 | showcase-live | generiert; Referenz: PHOTO-…-39-09 2/4/5, IMG_8177 | Neugenerierung | `…/showcase-live.webp` | – | – | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026), Freigabe iwend offen |
 | showcase-interview | generiert; Referenz: IMG_8225, IMG_0474, IMG_8127 | Neugenerierung | `…/showcase-interview.webp` | – | – | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026), Freigabe iwend offen |
 | showcase-stadium | generiert; Referenz: IMG_0630, IMG_6561, PHOTO-…-33-11, IMG_1681 | Neugenerierung | `…/showcase-stadium.webp` | – | – | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026), Freigabe iwend offen |
-| Crew-Foto (1LIVE Krone 2018) | `content/raw-pictures/44eeb9b0-….jpg` | Weißabgleich und Farbkorrektur, KI-Hochskalierung (Gesichter unverändert), keine Retusche | `public/images/team/crew.webp` | ja, 11 erkennbare Personen | Sponsorenwand (1LIVE, WDR, bofrost, Krombacher u. a.) | – | Einverständnis aller Abgebildeten einholen | ⚠ auf Wunsch eingesetzt, Freigaben offen |
+| Crew-Foto (1LIVE Krone 2018) | `content/raw-pictures/44eeb9b0-….jpg` | Weißabgleich und Farbkorrektur, KI-Hochskalierung (Gesichter unverändert), Schatten neutralisiert, keine Retusche | `public/images/team/crew.webp` | ja, 11 erkennbare Personen | Sponsorenwand (1LIVE, WDR, bofrost, Krombacher u. a.) | – | Einverständnis aller Abgebildeten einholen | ⚠ auf Wunsch eingesetzt, Freigaben offen |
 | Team-Porträts (Pia Rottstegge, Wendelin Schiegel, Marco Klinger) | `content/ansprechpartner/*` (git-ignoriert) | KI-Studioporträt auf Basis des eigenen Fotos (OpenAI Images Edit, hohe Gesichtstreue), 960×1200 (Wendelin 800×1000) | `public/images/team/<name>.webp` | ja (gewollt) | – | – | Einverständnis der Personen, auch für die Verarbeitung durch OpenAI | ✅ generiert (07.11.2026), Freigabe der Personen offen |
 | Steckerbilder (6) | generiert aus Text | Neugenerierung | `public/images/cables/*.webp` | – | – (generisch, ohne Marke) | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026) |
 | Übrige Rohfotos (24 + 1 Video) | `content/raw-pictures/` | keine | nicht veröffentlicht | ja | ja (ZDF, UEFA, Vereine, Sponsoren) | Kamerapläne, Monitorinhalte | unklar | ❌ nicht veröffentlichen |
