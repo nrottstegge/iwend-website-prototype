@@ -1,4 +1,20 @@
 {
-  "de": { "name": "Marco Klinger", "role": "Disposition & Projektleitung", "text": "Ihr erster Ansprechpartner für Anfragen und Einsatzplanung.", "group": "management", "portrait": "", "visible": true, "order": 3 },
-  "en": { "name": "Marco Klinger", "role": "Scheduling & Project Management", "text": "Your first point of contact for enquiries and crew planning.", "group": "management", "portrait": "", "visible": true, "order": 3 }
+  "de": {
+    "name": "Marco Klinger",
+    "role": "Disposition & Projektleitung",
+    "text": "Ihr erster Ansprechpartner für Anfragen und Einsatzplanung.",
+    "group": "management",
+    "portrait": "/images/team/marco-klinger.webp",
+    "visible": true,
+    "order": 3
+  },
+  "en": {
+    "name": "Marco Klinger",
+    "role": "Scheduling & Project Management",
+    "text": "Your first point of contact for enquiries and crew planning.",
+    "group": "management",
+    "portrait": "/images/team/marco-klinger.webp",
+    "visible": true,
+    "order": 3
+  }
 }

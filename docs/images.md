@@ -47,7 +47,7 @@ Das Original bleibt unverändert. Masterdateien (PNG) liegen git-ignoriert in `s
 | showcase-interview | generiert; Referenz: IMG_8225, IMG_0474, IMG_8127 | Neugenerierung | `…/showcase-interview.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
 | showcase-stadium | generiert; Referenz: IMG_0630, IMG_6561, PHOTO-…-33-11, IMG_1681 | Neugenerierung | `…/showcase-stadium.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
 | Crew-Foto (1LIVE Krone 2018) | `content/raw-pictures/44eeb9b0-….jpg` | Farbkorrektur (Magenta/Rot reduziert, Schatten, Kontrast, Vignette, Schärfe), keine Retusche | `public/images/team/crew.webp` | ja, 11 erkennbare Personen | Sponsorenwand (1LIVE, WDR, bofrost, Krombacher u. a.) | – | Einverständnis aller Abgebildeten einholen | ⚠ auf Wunsch eingesetzt, Freigaben offen |
-| Porträts Pia Rottstegge, Wendelin Schiegel | `content/ansprechpartner/*.jpg` | Zuschnitt 4:5, leichte Kontrast-/Farbkorrektur | `public/images/team/*.webp` | ja | – | – | von iwend bereitgestellt | ✅ |
+| Porträts Pia Rottstegge, Wendelin Schiegel, Marco Klinger | `content/ansprechpartner/*` | Zuschnitt 4:5, leichte Kontrast-/Farbkorrektur | `public/images/team/*.webp` | ja | – | – | von iwend bereitgestellt | ✅ |
 | Übrige Rohfotos (24 + 1 Video) | `content/raw-pictures/` | keine | nicht veröffentlicht | ja | ja (ZDF, UEFA, Vereine, Sponsoren) | Kamerapläne, Monitorinhalte | unklar | ❌ nicht veröffentlichen |
 
 Die Hero-Animation funktioniert ohne Foto. Das Stadionbild liegt nur gedimmt hinter dem Kameraplan.

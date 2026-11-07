@@ -60,6 +60,6 @@ docs/                    Dokumentation
 1. **Bilder:** generieren (OpenAI-Guthaben nötig) und freigeben – bis dahin zeigt die Seite gestaltete Platzhalter. Siehe [docs/images.md](docs/images.md).
 2. **Impressum/Datenschutz:** Registergericht, HRB, USt-ID und Verantwortliche ergänzen, rechtlich prüfen (mit ⚠ markiert).
 3. **Kundenlogos:** Nutzung mit den Kunden abstimmen; Name und Sitz für das orangefarbene „G“-Logo ergänzen.
-4. **Porträt** von Marco Klinger ergänzen; Einverständnis der Personen auf dem Crew-Foto einholen.
+4. **Crew-Foto:** Einverständnis der abgebildeten Personen einholen.
 5. **Suchmaschinen:** In *Einstellungen → Firma & Kontakt* „Vor Suchmaschinen verbergen“ deaktivieren.
 6. **Formular:** Das Anfrageformular öffnet das E-Mail-Programm (`mailto:`), es gibt bewusst keinen Drittanbieter.
