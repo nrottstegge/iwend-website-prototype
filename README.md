@@ -59,7 +59,7 @@ docs/                    Dokumentation
 
 1. **Bilder & Team-Porträts:** generieren (OpenAI-Guthaben nötig) und freigeben – bis dahin zeigt die Seite gestaltete Platzhalter bzw. Initialen. Siehe [docs/images.md](docs/images.md).
 2. **Impressum/Datenschutz:** Registergericht, HRB, USt-ID und Verantwortliche ergänzen, rechtlich prüfen (mit ⚠ markiert).
-3. **Kundenlogos:** Nutzung mit den Kunden abstimmen; Name und Sitz für das orangefarbene „G“-Logo ergänzen.
+3. **Kundenlogos:** Nutzung mit den Kunden abstimmen.
 4. **Crew-Foto:** Einverständnis der abgebildeten Personen einholen.
 5. **Suchmaschinen:** In *Einstellungen → Firma & Kontakt* „Vor Suchmaschinen verbergen“ deaktivieren.
 6. **Formular:** Das Anfrageformular öffnet das E-Mail-Programm (`mailto:`), es gibt bewusst keinen Drittanbieter.

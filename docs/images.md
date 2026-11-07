@@ -47,13 +47,13 @@ Das Original bleibt unverändert. Masterdateien (PNG) liegen git-ignoriert in `s
 | Asset | Quelle | Verarbeitung | Ausgabe | Personen | Marken | Vertrauliches | Rechte | Freigabe |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Logo iwend | `content/Logo/iwend Logo.svg` | unverändert (Pfade zur Laufzeit gelesen) | inline SVG, `public/favicon.svg` (Elefant) | – | eigene Marke | – | iwend | ✅ |
-| Kundenlogos (18) | `content/clients/*` | unverändert kopiert, umbenannt | `public/images/clients/` | – | Kundenmarken | – | Nutzung mit Kunden abstimmen | ⚠ prüfen |
-| hero-stadium | generiert; Referenz: 1126274b…, IMG_0630, IMG_4809, IMG_8539 | Neugenerierung | `public/images/generated/hero-stadium.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
-| showcase-live | generiert; Referenz: PHOTO-…-39-09 2/4/5, IMG_8177 | Neugenerierung | `…/showcase-live.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
-| showcase-interview | generiert; Referenz: IMG_8225, IMG_0474, IMG_8127 | Neugenerierung | `…/showcase-interview.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
-| showcase-stadium | generiert; Referenz: IMG_0630, IMG_6561, PHOTO-…-33-11, IMG_1681 | Neugenerierung | `…/showcase-stadium.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
+| Kundenlogos (19) | `content/clients/*` | unverändert kopiert, umbenannt | `public/images/clients/` | – | Kundenmarken | – | Nutzung mit Kunden abstimmen | ⚠ prüfen |
+| hero-stadium | generiert; Referenz: 1126274b…, IMG_0630, IMG_4809, IMG_8539 | Neugenerierung | `public/images/generated/hero-stadium.webp` | – | – | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026), Freigabe iwend offen |
+| showcase-live | generiert; Referenz: PHOTO-…-39-09 2/4/5, IMG_8177 | Neugenerierung | `…/showcase-live.webp` | – | – | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026), Freigabe iwend offen |
+| showcase-interview | generiert; Referenz: IMG_8225, IMG_0474, IMG_8127 | Neugenerierung | `…/showcase-interview.webp` | – | – | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026), Freigabe iwend offen |
+| showcase-stadium | generiert; Referenz: IMG_0630, IMG_6561, PHOTO-…-33-11, IMG_1681 | Neugenerierung | `…/showcase-stadium.webp` | – | – | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026), Freigabe iwend offen |
 | Crew-Foto (1LIVE Krone 2018) | `content/raw-pictures/44eeb9b0-….jpg` | Farbkorrektur (Magenta/Rot reduziert, Schatten, Kontrast, Vignette, Schärfe), keine Retusche | `public/images/team/crew.webp` | ja, 11 erkennbare Personen | Sponsorenwand (1LIVE, WDR, bofrost, Krombacher u. a.) | – | Einverständnis aller Abgebildeten einholen | ⚠ auf Wunsch eingesetzt, Freigaben offen |
-| Team-Porträts (Pia Rottstegge, Wendelin Schiegel, Marco Klinger) | `content/ansprechpartner/*` (git-ignoriert) | KI-Studioporträt auf Basis des eigenen Fotos (OpenAI Images Edit, hohe Gesichtstreue), 800×1000 | `public/images/team/<name>.webp` | ja (gewollt) | – | – | Einverständnis der Personen, auch für die Verarbeitung durch OpenAI | ⏳ offen – bis dahin Initialen |
+| Team-Porträts (Pia Rottstegge, Wendelin Schiegel, Marco Klinger) | `content/ansprechpartner/*` (git-ignoriert) | KI-Studioporträt auf Basis des eigenen Fotos (OpenAI Images Edit, hohe Gesichtstreue), 800×1000 | `public/images/team/<name>.webp` | ja (gewollt) | – | – | Einverständnis der Personen, auch für die Verarbeitung durch OpenAI | ✅ generiert (07.11.2026), Freigabe der Personen offen |
 | Übrige Rohfotos (24 + 1 Video) | `content/raw-pictures/` | keine | nicht veröffentlicht | ja | ja (ZDF, UEFA, Vereine, Sponsoren) | Kamerapläne, Monitorinhalte | unklar | ❌ nicht veröffentlichen |
 
 Die Hero-Animation funktioniert ohne Foto. Das Stadionbild liegt nur gedimmt hinter dem Kameraplan.

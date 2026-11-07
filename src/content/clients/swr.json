@@ -1,0 +1,10 @@
+{
+  "name": "SWR",
+  "logo": "/images/clients/swr.svg",
+  "city": "Stuttgart",
+  "lat": 48.776,
+  "lon": 9.183,
+  "background": "light",
+  "visible": true,
+  "order": 4
+}

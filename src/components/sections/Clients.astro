@@ -25,6 +25,14 @@ const fallbackAlt = lang === 'de' ? 'Kundenlogo' : 'Client logo';
 const more = lang === 'de' ? 'Weitere' : 'More';
 // Labels sit right of the dot, except in the eastern third of the map.
 const labelLeft = (x: number) => x > MAP_W * 0.68;
+// Small logo chips next to each city label (monospace label width is estimated).
+const CHIP = { w: 30, h: 15, gap: 3 };
+const chipX = (c: { x: number; label: string }, i: number, n: number) => {
+  const textW = c.label.length * 7.4;
+  return labelLeft(c.x)
+    ? c.x - 14 - textW - 8 - (n - i) * (CHIP.w + CHIP.gap) + CHIP.gap
+    : c.x + 14 + textW + 8 + i * (CHIP.w + CHIP.gap);
+};
 ---
 
 <section id={ANCHORS[lang].clients} class="clients light section" aria-labelledby="clients-title">
@@ -53,6 +61,21 @@ const labelLeft = (x: number) => x > MAP_W * 0.68;
                 <text x={labelLeft(c.x) ? c.x - 14 : c.x + 14} y={c.y + 4} text-anchor={labelLeft(c.x) ? 'end' : 'start'}>
                   {c.label}
                 </text>
+                <g class="chips" aria-hidden="true">
+                  {c.items.map((client, k) => (
+                    <g class:list={['chip', client.background]}>
+                      <rect x={chipX(c, k, c.items.length)} y={c.y - CHIP.h / 2} width={CHIP.w} height={CHIP.h} rx="1.5" />
+                      <image
+                        href={withBase(client.logo)}
+                        x={chipX(c, k, c.items.length) + 2.5}
+                        y={c.y - CHIP.h / 2 + 2}
+                        width={CHIP.w - 5}
+                        height={CHIP.h - 4}
+                        preserveAspectRatio="xMidYMid meet"
+                      />
+                    </g>
+                  ))}
+                </g>
               </g>
             ))
           }
@@ -179,6 +202,17 @@ const labelLeft = (x: number) => x > MAP_W * 0.68;
   .halo {
     fill: rgb(229 37 33 / 0.14);
     stroke: rgb(229 37 33 / 0.5);
+  }
+  .chip rect {
+    fill: var(--white);
+    stroke: rgb(14 16 20 / 0.18);
+    stroke-width: 0.6;
+  }
+  .chip.dark rect {
+    fill: var(--ink-2);
+  }
+  .dot:global(.on) .chip rect {
+    stroke: var(--red);
   }
   .home circle:not(.halo) {
     fill: var(--red);
