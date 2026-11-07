@@ -22,6 +22,12 @@ ohne Upload der Originale, ohne erkennbare Gesichter, Logos oder lesbaren Text.
 
 Briefs und Stilvorgaben: `scripts/image-briefs.json`.
 
+**Team-Porträts:** Die Originalfotos liegen git-ignoriert in `content/ansprechpartner/`. `npm run images`
+schickt jedes Foto als Referenz an den Edit-Endpunkt und erzeugt einheitliche Studioporträts (gleicher
+Hintergrund, gleiches Licht, gleicher Ausschnitt, schwarzes Shirt ohne Logo). Vorgaben stehen unter
+`portraitStyle`/`portraits` in `scripts/image-briefs.json`. Ergebnis immer auf Ähnlichkeit prüfen und von
+der Person freigeben lassen. Bis dahin zeigt die Website die Initialen.
+
 **Ausnahme Crew-Foto:** Das Teamfoto wird nicht generiert, sondern nur farblich bearbeitet (ffmpeg):
 `huesaturation` (Magenta −60 %, Rot −15 %, gesamt −8 %), weiche Kurve mit leicht angehobenen Schatten,
 Kontrast +7 %, Gamma 1.05, Farbtemperatur leicht neutralisiert, Vignette, leichtes Nachschärfen.
@@ -47,7 +53,7 @@ Das Original bleibt unverändert. Masterdateien (PNG) liegen git-ignoriert in `s
 | showcase-interview | generiert; Referenz: IMG_8225, IMG_0474, IMG_8127 | Neugenerierung | `…/showcase-interview.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
 | showcase-stadium | generiert; Referenz: IMG_0630, IMG_6561, PHOTO-…-33-11, IMG_1681 | Neugenerierung | `…/showcase-stadium.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
 | Crew-Foto (1LIVE Krone 2018) | `content/raw-pictures/44eeb9b0-….jpg` | Farbkorrektur (Magenta/Rot reduziert, Schatten, Kontrast, Vignette, Schärfe), keine Retusche | `public/images/team/crew.webp` | ja, 11 erkennbare Personen | Sponsorenwand (1LIVE, WDR, bofrost, Krombacher u. a.) | – | Einverständnis aller Abgebildeten einholen | ⚠ auf Wunsch eingesetzt, Freigaben offen |
-| Porträts Pia Rottstegge, Wendelin Schiegel, Marco Klinger | `content/ansprechpartner/*` | Zuschnitt 4:5, leichte Kontrast-/Farbkorrektur | `public/images/team/*.webp` | ja | – | – | von iwend bereitgestellt | ✅ |
+| Team-Porträts (Pia Rottstegge, Wendelin Schiegel, Marco Klinger) | `content/ansprechpartner/*` (git-ignoriert) | KI-Studioporträt auf Basis des eigenen Fotos (OpenAI Images Edit, hohe Gesichtstreue), 800×1000 | `public/images/team/<name>.webp` | ja (gewollt) | – | – | Einverständnis der Personen, auch für die Verarbeitung durch OpenAI | ⏳ offen – bis dahin Initialen |
 | Übrige Rohfotos (24 + 1 Video) | `content/raw-pictures/` | keine | nicht veröffentlicht | ja | ja (ZDF, UEFA, Vereine, Sponsoren) | Kamerapläne, Monitorinhalte | unklar | ❌ nicht veröffentlichen |
 
 Die Hero-Animation funktioniert ohne Foto. Das Stadionbild liegt nur gedimmt hinter dem Kameraplan.

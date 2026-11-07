@@ -52,5 +52,28 @@
       ],
       "prompt": "Pitch side of a large football stadium during broadcast set-up. Several broadcast cameras on tripods with long telephoto lenses, black flight cases and a stagebox on the ground, cables neatly routed along the edge of the pitch. Two technicians in black work clothes seen from behind, empty stands, overcast daylight. Through an open stadium gate in the background, a compound of parked white outside-broadcast trucks."
     }
+  ],
+  "portraitStyle": "Professional corporate headshot for a broadcast-engineering company website. Recreate this exact person – keep the face, facial features, age, skin tone, hairstyle, facial hair, glasses and expression true to the reference so the person is clearly recognisable; do not beautify, rejuvenate or change identity. Head and shoulders, centred, eye level, facing the camera, calm confident natural smile. Plain black crew-neck work shirt without any logo or text. Uniform dark charcoal studio background (#1c1f23) with a subtle soft gradient, soft key light from the left, gentle rim light, natural colour, sharp focus on the eyes. No props, no text, no watermark. Same lighting and framing as the other team portraits.",
+  "portraits": [
+    {
+      "id": "portrait-pia-rottstegge",
+      "input": "content/ansprechpartner/Pia Rottstegge.jpg",
+      "output": "public/images/team/pia-rottstegge.webp",
+      "usedIn": "Team – Pia Rottstegge"
+    },
+    {
+      "id": "portrait-wendelin-schiegel",
+      "input": "content/ansprechpartner/Wendelin Schiegel.jpg",
+      "output": "public/images/team/wendelin-schiegel.webp",
+      "usedIn": "Team – Wendelin Schiegel",
+      "note": "Keep his flat cap."
+    },
+    {
+      "id": "portrait-marco-klinger",
+      "input": "content/ansprechpartner/Marco Klinger.png",
+      "output": "public/images/team/marco-klinger.webp",
+      "usedIn": "Team – Marco Klinger",
+      "note": "Arms may be relaxed instead of crossed."
+    }
   ]
 }

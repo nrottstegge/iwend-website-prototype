@@ -1,15 +1,18 @@
-// Generates the website imagery from scripts/image-briefs.json via the OpenAI Images API.
-// The raw photos in content/raw-pictures are only analysed by humans to write the briefs;
-// they are never uploaded. Output: optimised WebP in public/images/generated/.
+// Generates the website imagery via the OpenAI Images API, driven by scripts/image-briefs.json.
 //
-//   npm run images                 # all missing images
-//   npm run images -- showcase-live --force
+// Scenes ("images"): new, fictional photos from text briefs. The raw photos in content/raw-pictures
+//   were only analysed by humans to write the briefs; they are never uploaded.
+// Team portraits ("portraits"): the person's own photo from content/ansprechpartner (git-ignored) is
+//   sent as reference to the edit endpoint to create uniform studio headshots of the same person.
+//
+//   npm run images                          # everything that is missing
+//   npm run images -- portrait-pia-rottstegge --force
 //
 // Requires OPENAI_API_KEY in .env (see .env.example). Review every result (docs/images.md)
 // before committing it.
 
 import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
+import { basename, dirname, extname, join } from 'node:path';
 import sharp from 'sharp';
 
 const root = join(import.meta.dirname, '..');
@@ -26,22 +29,59 @@ if (!key) {
 }
 
 const exists = (p) => access(p).then(() => true, () => false);
+const auth = { Authorization: `Bearer ${key}` };
 
-for (const img of briefs.images) {
-  if (only.length && !only.includes(img.id)) continue;
-  const out = join(root, img.output);
+function generate(prompt, size) {
+  return fetch('https://api.openai.com/v1/images/generations', {
+    method: 'POST',
+    headers: { ...auth, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model, prompt, size, quality: 'high', n: 1 }),
+  });
+}
+
+async function edit(prompt, size, inputPath, fidelity = true) {
+  const form = new FormData();
+  const type = extname(inputPath).toLowerCase() === '.png' ? 'image/png' : 'image/jpeg';
+  form.append('image', new Blob([await readFile(inputPath)], { type }), basename(inputPath));
+  form.append('model', model);
+  form.append('prompt', prompt);
+  form.append('size', size);
+  form.append('quality', 'high');
+  if (fidelity) form.append('input_fidelity', 'high');
+  const res = await fetch('https://api.openai.com/v1/images/edits', { method: 'POST', headers: auth, body: form });
+  // Not every model supports input_fidelity – retry once without it.
+  if (res.status === 400 && fidelity && (await res.clone().text()).includes('input_fidelity')) {
+    return edit(prompt, size, inputPath, false);
+  }
+  return res;
+}
+
+const jobs = [
+  ...briefs.images.map((b) => ({ ...b, run: () => generate(`${b.prompt}\n\n${briefs.style}`, b.size) })),
+  ...briefs.portraits.map((b) => ({
+    ...b,
+    size: '1024x1536',
+    resize: [800, 1000],
+    run: () => edit([briefs.portraitStyle, b.note].filter(Boolean).join(' '), '1024x1536', join(root, b.input)),
+  })),
+];
+
+for (const job of jobs) {
+  if (only.length && !only.includes(job.id)) continue;
+  const out = join(root, job.output);
   if (!force && (await exists(out))) {
-    console.log(`= ${img.id} (vorhanden, --force zum Überschreiben)`);
+    console.log(`= ${job.id} (vorhanden, --force zum Überschreiben)`);
     continue;
   }
-  console.log(`→ ${img.id} (${model}, ${img.size}) …`);
-  const res = await fetch('https://api.openai.com/v1/images/generations', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model, prompt: `${img.prompt}\n\n${briefs.style}`, size: img.size, quality: 'high', n: 1 }),
-  });
+  if (job.input && !(await exists(join(root, job.input)))) {
+    console.error(`✗ ${job.id}: Referenzbild fehlt (${job.input})`);
+    process.exitCode = 1;
+    continue;
+  }
+  console.log(`→ ${job.id} (${model}, ${job.size}) …`);
+  const res = await job.run();
   if (!res.ok) {
-    console.error(`✗ ${img.id}: ${res.status} ${await res.text()}`);
+    console.error(`✗ ${job.id}: ${res.status} ${await res.text()}`);
     process.exitCode = 1;
     // Authentication or billing problems affect every request – stop early.
     if (res.status === 401 || res.status === 429) break;
@@ -51,11 +91,13 @@ for (const img of briefs.images) {
   const png = Buffer.from(data[0].b64_json, 'base64');
 
   // Keep the unprocessed master locally (git-ignored) for later re-encoding.
-  const master = join(root, 'scripts/.cache', `${img.id}.png`);
+  const master = join(root, 'scripts/.cache', `${job.id}.png`);
   await mkdir(dirname(master), { recursive: true });
   await writeFile(master, png);
 
   await mkdir(dirname(out), { recursive: true });
-  const info = await sharp(png).webp({ quality: 80 }).toFile(out);
-  console.log(`✓ ${img.output} (${info.width}×${info.height}, ${Math.round(info.size / 1024)} KB)`);
+  let img = sharp(png);
+  if (job.resize) img = img.resize(job.resize[0], job.resize[1], { fit: 'cover', position: 'north' });
+  const info = await img.webp({ quality: 82 }).toFile(out);
+  console.log(`✓ ${job.output} (${info.width}×${info.height}, ${Math.round(info.size / 1024)} KB)`);
 }

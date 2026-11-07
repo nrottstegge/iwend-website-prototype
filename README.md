@@ -25,7 +25,7 @@ npm run dev       # http://localhost:4321/iwend-website-prototype/
 ## Struktur
 
 ```
-content/                 Originale (unverändert): Logo, Kundenlogos; raw-pictures/ ist git-ignoriert
+content/                 Originale (unverändert): Logo, Kundenlogos; raw-pictures/ und ansprechpartner/ sind git-ignoriert
 public/
   admin/                 Sveltia CMS (index.html, config.yml)
   images/clients/        Kundenlogos für die Website (Kopien der Originale)
@@ -57,7 +57,7 @@ docs/                    Dokumentation
 
 ## Offene Punkte vor dem Livegang
 
-1. **Bilder:** generieren (OpenAI-Guthaben nötig) und freigeben – bis dahin zeigt die Seite gestaltete Platzhalter. Siehe [docs/images.md](docs/images.md).
+1. **Bilder & Team-Porträts:** generieren (OpenAI-Guthaben nötig) und freigeben – bis dahin zeigt die Seite gestaltete Platzhalter bzw. Initialen. Siehe [docs/images.md](docs/images.md).
 2. **Impressum/Datenschutz:** Registergericht, HRB, USt-ID und Verantwortliche ergänzen, rechtlich prüfen (mit ⚠ markiert).
 3. **Kundenlogos:** Nutzung mit den Kunden abstimmen; Name und Sitz für das orangefarbene „G“-Logo ergänzen.
 4. **Crew-Foto:** Einverständnis der abgebildeten Personen einholen.

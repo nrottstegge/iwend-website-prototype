@@ -10,6 +10,7 @@ dist/
 
 # Unreleased source material (see docs/images.md)
 content/raw-pictures/
+content/ansprechpartner/
 
 # Generated image masters (only optimised WebP in public/ is published)
 scripts/.cache/
