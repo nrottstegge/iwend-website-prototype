@@ -220,7 +220,7 @@ const phaseWindows = [
     --t: clamp(0, (var(--p) - var(--a)) / var(--d), 1);
     fill: none;
     stroke: var(--red);
-    stroke-width: 2;
+    stroke-width: var(--lead-w, 1.4);
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-dasharray: 1 1;
@@ -230,7 +230,7 @@ const phaseWindows = [
   .outline path {
     fill: none;
     stroke: var(--red);
-    /* ~2px on screen while the logo is enlarged, matching the cable width. */
+    /* hero.ts gives the cables the same on-screen width. */
     stroke-width: 1.6;
     stroke-linecap: round;
     stroke-dasharray: 1 1;

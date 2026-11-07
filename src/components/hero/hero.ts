@@ -67,6 +67,9 @@ export function initHero(section: HTMLElement) {
     ];
 
     leads.setAttribute('viewBox', `0 0 ${st.width} ${st.height}`);
+    // Same on-screen width as the logo outline stroke (stroke-width in logo units × scale).
+    const outlineWidth = parseFloat(getComputedStyle(strokes[0]).strokeWidth) || 1.6;
+    leads.style.setProperty('--lead-w', (outlineWidth * k * LOGO_SCALE).toFixed(2));
     leads.replaceChildren();
     const targets = strokes.map((path) => {
       const [tx, ty] = toStage(Number(path.dataset.x), Number(path.dataset.y));
