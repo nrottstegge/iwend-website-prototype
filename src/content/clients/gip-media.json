@@ -1,6 +1,9 @@
 {
   "name": "GIP Media",
   "logo": "/images/clients/gip-media.png",
+  "city": "Erkrath",
+  "lat": 51.222,
+  "lon": 6.908,
   "background": "light",
   "visible": true,
   "order": 12

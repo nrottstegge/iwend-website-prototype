@@ -106,6 +106,9 @@ const clients = defineCollection({
   schema: z.object({
     name: z.string().default(''),
     logo: z.string(),
+    city: z.string().default(''),
+    lat: z.number().optional(),
+    lon: z.number().optional(),
     background: z.enum(['light', 'dark']).default('light'),
     visible: z.boolean().default(true),
     order: z.number().default(100),

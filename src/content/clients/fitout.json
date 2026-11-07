@@ -1,6 +1,9 @@
 {
   "name": "FITOUT",
   "logo": "/images/clients/fitout.png",
+  "city": "Weinstadt",
+  "lat": 48.813,
+  "lon": 9.371,
   "background": "light",
   "visible": true,
   "order": 14

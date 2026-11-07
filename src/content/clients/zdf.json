@@ -1,6 +1,9 @@
 {
   "name": "ZDF",
   "logo": "/images/clients/zdf.svg",
+  "city": "Mainz",
+  "lat": 49.993,
+  "lon": 8.247,
   "background": "light",
   "visible": true,
   "order": 1

@@ -1,6 +1,9 @@
 {
   "name": "Betamobil",
   "logo": "/images/clients/betamobil.png",
+  "city": "Berlin",
+  "lat": 52.52,
+  "lon": 13.405,
   "background": "light",
   "visible": true,
   "order": 10

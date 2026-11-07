@@ -1,6 +1,9 @@
 {
   "name": "TVN",
   "logo": "/images/clients/tvn.svg",
+  "city": "Hannover",
+  "lat": 52.375,
+  "lon": 9.732,
   "background": "light",
   "visible": true,
   "order": 5

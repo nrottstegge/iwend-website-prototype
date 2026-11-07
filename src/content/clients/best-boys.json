@@ -1,6 +1,9 @@
 {
   "name": "best boys",
   "logo": "/images/clients/best-boys.svg",
+  "city": "Köln",
+  "lat": 50.938,
+  "lon": 6.96,
   "background": "light",
   "visible": true,
   "order": 9

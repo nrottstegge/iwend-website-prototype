@@ -1,6 +1,9 @@
 {
   "name": "HD Broadcast",
   "logo": "/images/clients/hd-broadcast.png",
+  "city": "Nieder-Olm",
+  "lat": 49.91,
+  "lon": 8.204,
   "background": "dark",
   "visible": true,
   "order": 11

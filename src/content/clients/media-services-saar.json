@@ -1,6 +1,9 @@
 {
   "name": "media services saar",
   "logo": "/images/clients/media-services-saar.png",
+  "city": "Saarbrücken",
+  "lat": 49.24,
+  "lon": 6.997,
   "background": "light",
   "visible": true,
   "order": 15

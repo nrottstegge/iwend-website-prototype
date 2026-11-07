@@ -1,6 +1,9 @@
 {
   "name": "Skyline Television",
   "logo": "/images/clients/skyline-television.png",
+  "city": "Mainz",
+  "lat": 49.993,
+  "lon": 8.247,
   "background": "light",
   "visible": true,
   "order": 8

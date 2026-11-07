@@ -46,10 +46,11 @@ dann gefüllt. Das Ergebnis ist exakt das Original-Logo.
 - Hochformat: Der Plan wird um 90° gedreht, damit das ganze Stadion sichtbar ist; Kameras zeigen nur ihre Nummer.
 - Kein WebGL, keine Animationsbibliothek; das Hero-Script hat unter 2 KB.
 
-## Kunden: Logos bilden das Ruhrgebiet
+## Kunden: Netzwerk ab Bochum
 
-`src/lib/ruhr.ts` enthält einen vereinfachten Umriss des RVR-Gebiets (Längen-/Breitengrade, projiziert).
-Die Logo-Positionen werden beim Build deterministisch berechnet (Farthest-Point-Sampling innerhalb des Umrisses,
-Städtebeschriftungen bleiben frei, einheitliche Kachelgröße ohne Überlappung). Beim Einblenden fliegen die Logos
-aus einer losen Wolke an ihren Platz. Auf kleinen Bildschirmen zeigt die Karte Markierungen und die Logos stehen
-als Raster darunter. Tests: `tests/ruhr.test.ts`.
+`src/lib/geo.ts` enthält den Umriss Deutschlands (Natural Earth 1:110m, gemeinfrei), eine einfache
+Projektion und die Kabelführung. Jeder Kunde hat im CMS **Firmensitz, Breiten- und Längengrad** (laut
+Impressum bzw. Handelsregister, Recherche vom 07.11.2026). Nahe beieinanderliegende Orte werden
+zusammengefasst (z. B. Köln · Hürth). Von Bochum laufen Kabelwege zu jedem Ort; sie zeichnen sich beim
+Einblenden. Rechts stehen die Logos nach Ort gruppiert; Hover hebt Ort und Kabel hervor. Kunden ohne
+Koordinaten erscheinen unter „Weitere“. Tests: `tests/geo.test.ts`.

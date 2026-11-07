@@ -1,6 +1,9 @@
 {
   "name": "MMC Studios",
   "logo": "/images/clients/mmc-studios.png",
+  "city": "Köln",
+  "lat": 50.938,
+  "lon": 6.96,
   "background": "dark",
   "visible": true,
   "order": 7

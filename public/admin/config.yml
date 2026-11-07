@@ -289,13 +289,16 @@ collections:
     format: json
     create: true
     identifier_field: name
-    summary: '{{name}}'
-    sortable_fields: [order, name]
+    summary: '{{name}} · {{city}}'
+    sortable_fields: [order, name, city]
     media_folder: /public/images/clients
     public_folder: /images/clients
     fields:
       - { name: name, label: Name, widget: string, required: false, hint: Wird beim Überfahren des Logos angezeigt. }
       - { name: logo, label: Logo, widget: image, hint: SVG oder PNG mit transparentem Hintergrund. Logos nicht verändern. }
+      - { name: city, label: Firmensitz (Stadt), widget: string, required: false, hint: Laut Impressum. Leer = nur in der Liste, nicht auf der Karte. }
+      - { name: lat, label: Breitengrad, widget: number, value_type: float, required: false, hint: "z. B. 50.938 (Köln) – Rechtsklick in Google Maps zeigt die Koordinaten." }
+      - { name: lon, label: Längengrad, widget: number, value_type: float, required: false, hint: z. B. 6.960 (Köln) }
       - name: background
         label: Kachelhintergrund
         widget: select

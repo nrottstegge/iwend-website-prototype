@@ -1,6 +1,9 @@
 {
   "name": "NDR",
   "logo": "/images/clients/ndr.svg",
+  "city": "Hamburg",
+  "lat": 53.551,
+  "lon": 9.994,
   "background": "light",
   "visible": true,
   "order": 3

@@ -1,6 +1,9 @@
 {
   "name": "EMG",
   "logo": "/images/clients/emg.jpg",
+  "city": "Hürth",
+  "lat": 50.877,
+  "lon": 6.876,
   "background": "light",
   "visible": true,
   "order": 4

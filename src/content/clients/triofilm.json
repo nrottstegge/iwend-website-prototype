@@ -1,6 +1,9 @@
 {
   "name": "TV Triofilm",
   "logo": "/images/clients/triofilm.png",
+  "city": "Hamburg",
+  "lat": 53.551,
+  "lon": 9.994,
   "background": "light",
   "visible": true,
   "order": 13

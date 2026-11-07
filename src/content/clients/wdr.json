@@ -1,6 +1,9 @@
 {
   "name": "WDR",
   "logo": "/images/clients/wdr.svg",
+  "city": "Köln",
+  "lat": 50.938,
+  "lon": 6.96,
   "background": "light",
   "visible": true,
   "order": 2
