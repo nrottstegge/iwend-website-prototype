@@ -10,25 +10,118 @@
     },
     "about": {
       "title": "Was Arbeiten bei iwend bedeutet",
-      "text": "Du bist Teil einer Crew, die Kameras verkabelt, Positionen aufbaut und während der Sendung dafür sorgt, dass alles läuft. Die Einsätze sind vielfältig – vom Studio über Sportveranstaltungen bis zur Außenproduktion. Du arbeitest mit erfahrenen Kolleginnen und Kollegen und lernst die Abläufe professioneller TV-Produktionen von Grund auf kennen."
+      "text": "Deine Hauptaufgabe: Kabel vom Ü-Wagen zu den Kamerapositionen und Stageboxen am Set verlegen – und sie während der Sendung nachführen. Deine Vorarbeiter vor Ort zeigen dir, welche Kabel auf welchen Wegen wohin gezogen werden. Bei der Einarbeitung stehen dir Vorarbeiter und Kollegen jederzeit zur Seite."
+    },
+    "requirements": {
+      "title": "Was du mitbringst",
+      "text": "Lust auf Teamarbeit und ein freundliches, zurückhaltendes Auftreten gegenüber unseren Kunden. Alles Weitere lernst du bei uns."
     },
     "activities": {
       "title": "Typische Tätigkeiten",
       "note": "Beispielhafte Tätigkeitsfelder – keine aktuellen Stellenausschreibungen.",
       "items": [
-        { "title": "Kabelhilfe / Kabelträger", "text": "Du führst Kamerakabel während der Sendung, hältst Wege frei und sorgst dafür, dass die Kamera sich frei bewegen kann." },
-        { "title": "Technische Produktionsassistenz", "text": "Du unterstützt beim Einrichten von Kamera- und Monitorpositionen und bei Umbauten während der Produktion." },
-        { "title": "Bild- und Tonassistenz", "text": "Du assistierst an Interview- und Moderationspositionen – mit Kabel, Licht, Mikrofon und Blick für das Detail." },
-        { "title": "Auf- und Abbau", "text": "Du verlegst Kabelstrecken, verbindest Stageboxen und baust nach der Produktion alles sauber zurück." },
-        { "title": "Teamleitung", "text": "Mit Erfahrung koordinierst du eine Crew vor Ort und bist Ansprechperson für die Produktion." }
+        {
+          "title": "Kabelhilfe / Kabelträger",
+          "text": "Du führst Kamerakabel während der Sendung, hältst Wege frei und sorgst dafür, dass die Kamera sich frei bewegen kann."
+        },
+        {
+          "title": "Technische Produktionsassistenz",
+          "text": "Du unterstützt beim Einrichten von Kamera- und Monitorpositionen und bei Umbauten während der Produktion."
+        },
+        {
+          "title": "Bild- und Tonassistenz",
+          "text": "Du assistierst an Interview- und Moderationspositionen – mit Kabel, Licht, Mikrofon und Blick für das Detail."
+        },
+        {
+          "title": "Auf- und Abbau",
+          "text": "Du verlegst Kabelstrecken, verbindest Stageboxen und baust nach der Produktion alles sauber zurück."
+        },
+        {
+          "title": "Teamleitung",
+          "text": "Mit Erfahrung koordinierst du eine Crew vor Ort und bist Ansprechperson für die Produktion."
+        }
+      ]
+    },
+    "glossary": {
+      "title": "Kabel-ABC",
+      "text": "Am Set fallen Begriffe, die du schnell kennst:",
+      "items": [
+        {
+          "term": "Beiziehen",
+          "text": "Das Kabel zum gewünschten Ort ziehen."
+        },
+        {
+          "term": "Anziehen",
+          "text": "Das Kabel ein Stück heranziehen und hochhalten, um zu zeigen, um welches Kabel es gerade geht."
+        },
+        {
+          "term": "Stecker!",
+          "text": "Wird gerufen, wenn das Kabelende ankommt. Vorsicht – Verletzungsgefahr."
+        },
+        {
+          "term": "Labeln",
+          "text": "Beide Kabelenden und Kabeltrommeln leserlich beschriften."
+        },
+        {
+          "term": "Schiegelmeter",
+          "text": "Wenn du denkst, es müsste genug Vorrat sein: kurz innehalten und noch ein Stück dazuziehen."
+        }
+      ]
+    },
+    "cables": {
+      "title": "Kabel, mit denen du arbeitest",
+      "items": [
+        {
+          "name": "SMPTE / Lemo",
+          "text": "Hybridkabel mit Glasfaser, Strom und Steuerung. Das Standardkabel für Kameras und Stageboxen."
+        },
+        {
+          "name": "BNC",
+          "text": "Kupferkabel für ein einzelnes Videosignal."
+        },
+        {
+          "name": "Cat",
+          "text": "Bekannt als Netzwerkkabel, oft auch zur Steuerung kleiner Kameras."
+        },
+        {
+          "name": "XLR",
+          "text": "Kupferkabel für Audiosignale – mono oder stereo, mit 3, 4 oder 5 Pins."
+        },
+        {
+          "name": "Siemensstecker",
+          "text": "Audiokabel mit 10 Kupferadern. Als Havarie-Reserve oder um bis zu zehn Mikrofone für Atmo in einem Bereich zu vernetzen."
+        },
+        {
+          "name": "opticalCON QUAD",
+          "text": "Kabel mit vier Glasfasern, zum Beispiel als Stagebox-Kabel im Studio."
+        }
+      ]
+    },
+    "safety": {
+      "title": "Sicherheit & Sorgfalt",
+      "items": [
+        "Arbeitshandschuhe und Sicherheitsschuhe tragen, bei Bedarf Helm – und die Sicherheitsvorgaben der Produktion befolgen.",
+        "Keine Schlaufen in Durchgangsbereichen. Kabelmatten oder -brücken nutzen, Fluchtwege und Brandschutztüren freihalten.",
+        "An Eckpunkten genug Spiel lassen – als Kringel oder Acht –, damit Kamerapositionen flexibel bleiben.",
+        "Während der Sendung: Stand-by, gute Abstimmung mit dem Kameramann und Kabel nachführen oder zurückziehen. Dein Platz ist hinter der Kamera.",
+        "Zum Produktionsende alle Kabel zurückziehen und ordentlich auftrommeln."
       ]
     },
     "process": {
       "title": "So läuft die Bewerbung",
       "steps": [
-        { "title": "Kurz vorstellen", "text": "Schick uns ein paar Zeilen zu dir, deiner Erfahrung und deiner Verfügbarkeit." },
-        { "title": "Kennenlernen", "text": "Wir melden uns und sprechen kurz telefonisch oder persönlich." },
-        { "title": "Erster Einsatz", "text": "Du startest an der Seite erfahrener Kolleginnen und Kollegen." }
+        {
+          "title": "Kurz vorstellen",
+          "text": "Schick uns ein paar Zeilen zu dir, deiner Erfahrung und deiner Verfügbarkeit."
+        },
+        {
+          "title": "Kennenlernen",
+          "text": "Wir melden uns und sprechen kurz telefonisch oder persönlich."
+        },
+        {
+          "title": "Erster Einsatz",
+          "text": "Du startest an der Seite erfahrener Kolleginnen und Kollegen."
+        }
       ]
     },
     "cta": {
@@ -49,25 +142,118 @@
     },
     "about": {
       "title": "What working at iwend means",
-      "text": "You are part of a crew that cables cameras, sets up positions and makes sure everything runs during the broadcast. Assignments vary – from studios to sports events to outside productions. You work alongside experienced colleagues and learn how professional TV productions run from the ground up."
+      "text": "Your main task: laying cables from the OB van to the camera positions and stageboxes on set – and guiding them during the broadcast. Your crew leads on site show you which cables go along which routes. Crew leads and colleagues support you throughout your induction."
+    },
+    "requirements": {
+      "title": "What you bring",
+      "text": "Enjoying teamwork and a friendly, discreet manner towards our clients. We teach you everything else."
     },
     "activities": {
       "title": "Typical activities",
       "note": "Example fields of work – not current vacancies.",
       "items": [
-        { "title": "Cable assistant", "text": "You guide camera cables during the broadcast, keep paths clear and make sure the camera can move freely." },
-        { "title": "Technical production assistant", "text": "You help set up camera and monitor positions and support changeovers during production." },
-        { "title": "Camera and sound assistant", "text": "You assist at interview and presenter positions – with cable, light, microphone and an eye for detail." },
-        { "title": "Rigging and de-rig", "text": "You lay cable runs, connect stageboxes and cleanly de-rig everything after the production." },
-        { "title": "Crew lead", "text": "With experience, you coordinate a crew on site and are the contact person for the production." }
+        {
+          "title": "Cable assistant",
+          "text": "You guide camera cables during the broadcast, keep paths clear and make sure the camera can move freely."
+        },
+        {
+          "title": "Technical production assistant",
+          "text": "You help set up camera and monitor positions and support changeovers during production."
+        },
+        {
+          "title": "Camera and sound assistant",
+          "text": "You assist at interview and presenter positions – with cable, light, microphone and an eye for detail."
+        },
+        {
+          "title": "Rigging and de-rig",
+          "text": "You lay cable runs, connect stageboxes and cleanly de-rig everything after the production."
+        },
+        {
+          "title": "Crew lead",
+          "text": "With experience, you coordinate a crew on site and are the contact person for the production."
+        }
+      ]
+    },
+    "glossary": {
+      "title": "Cable ABC",
+      "text": "On set you will quickly learn terms like these:",
+      "items": [
+        {
+          "term": "Pull in",
+          "text": "Pull the cable to where it needs to go (German: beiziehen)."
+        },
+        {
+          "term": "Lift",
+          "text": "Pull the cable towards you and hold it up to show which cable is meant (German: anziehen)."
+        },
+        {
+          "term": "Connector!",
+          "text": "Called out when the cable end arrives. Careful – risk of injury (German: Stecker)."
+        },
+        {
+          "term": "Label",
+          "text": "Clearly label both cable ends and every cable drum."
+        },
+        {
+          "term": "Schiegelmeter",
+          "text": "Think you have enough slack? Pause – and pull in one more stretch. Our in-house unit."
+        }
+      ]
+    },
+    "cables": {
+      "title": "Cables you work with",
+      "items": [
+        {
+          "name": "SMPTE / Lemo",
+          "text": "Hybrid cable carrying fibre, power and control. The standard cable for cameras and stageboxes."
+        },
+        {
+          "name": "BNC",
+          "text": "Copper cable for a single video signal."
+        },
+        {
+          "name": "Cat",
+          "text": "Known as network cable, often also used to control small cameras."
+        },
+        {
+          "name": "XLR",
+          "text": "Copper cable for audio – mono or stereo, with 3, 4 or 5 pins."
+        },
+        {
+          "name": "Siemens connector",
+          "text": "Audio multicore with 10 copper conductors. Used as a backup line or to network up to ten ambience microphones in one area."
+        },
+        {
+          "name": "opticalCON QUAD",
+          "text": "Cable with four optical fibres, for example as a stagebox cable in studios."
+        }
+      ]
+    },
+    "safety": {
+      "title": "Safety & care",
+      "items": [
+        "Wear work gloves and safety shoes, a helmet where required – and follow the production's safety rules.",
+        "No loops in walkways. Use cable mats or ramps, keep escape routes and fire doors clear.",
+        "Leave enough slack at corners – as a coil or figure eight – so camera positions stay flexible.",
+        "During the broadcast: stay on stand-by, coordinate with the camera operator and feed or retract the cable. Your place is behind the camera.",
+        "At the end of production, pull in all cables and wind them neatly onto the drums."
       ]
     },
     "process": {
       "title": "How to apply",
       "steps": [
-        { "title": "Introduce yourself", "text": "Send us a few lines about yourself, your experience and your availability." },
-        { "title": "Get to know us", "text": "We get back to you for a short call or meeting." },
-        { "title": "First assignment", "text": "You start alongside experienced colleagues." }
+        {
+          "title": "Introduce yourself",
+          "text": "Send us a few lines about yourself, your experience and your availability."
+        },
+        {
+          "title": "Get to know us",
+          "text": "We get back to you for a short call or meeting."
+        },
+        {
+          "title": "First assignment",
+          "text": "You start alongside experienced colleagues."
+        }
       ]
     },
     "cta": {

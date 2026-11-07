@@ -141,6 +141,13 @@ collections:
             fields:
               - { name: title, label: Überschrift, widget: string, i18n: true }
               - { name: text, label: Text, widget: text, i18n: true }
+          - name: requirements
+            label: Was du mitbringst
+            widget: object
+            i18n: true
+            fields:
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: text, label: Text, widget: text, i18n: true }
           - name: activities
             label: Typische Tätigkeiten
             widget: object
@@ -156,6 +163,42 @@ collections:
                 fields:
                   - { name: title, label: Titel, widget: string, i18n: true }
                   - { name: text, label: Text, widget: text, i18n: true }
+          - name: glossary
+            label: Kabel-ABC (Begriffe)
+            widget: object
+            i18n: true
+            fields:
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: text, label: Einleitung, widget: string, i18n: true }
+              - name: items
+                label: Begriffe
+                widget: list
+                i18n: true
+                summary: '{{fields.term}}'
+                fields:
+                  - { name: term, label: Begriff, widget: string, i18n: true }
+                  - { name: text, label: Erklärung, widget: text, i18n: true }
+          - name: cables
+            label: Kabeltypen
+            widget: object
+            i18n: true
+            fields:
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - name: items
+                label: Kabel
+                widget: list
+                i18n: true
+                summary: '{{fields.name}}'
+                fields:
+                  - { name: name, label: Bezeichnung, widget: string, i18n: true }
+                  - { name: text, label: Beschreibung, widget: text, i18n: true }
+          - name: safety
+            label: Sicherheit & Sorgfalt
+            widget: object
+            i18n: true
+            fields:
+              - { name: title, label: Überschrift, widget: string, i18n: true }
+              - { name: items, label: Regeln, widget: list, field: { name: item, label: Regel, widget: text }, i18n: true }
           - name: process
             label: Bewerbungsablauf
             widget: object
