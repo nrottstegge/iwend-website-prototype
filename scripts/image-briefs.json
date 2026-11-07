@@ -84,7 +84,7 @@
       "input": "content/ansprechpartner/Marco Klinger.png",
       "output": "public/images/team/marco-klinger.webp",
       "usedIn": "Team – Marco Klinger",
-      "note": "Serious, professional, calm expression with at most a slight closed-mouth smile; well-groomed beard and hair; upright posture, arms relaxed, not crossed. The reference is low resolution – reconstruct fine, sharp detail without changing his identity.",
+      "note": "Friendly, approachable and professional: a warm, genuine smile (closed mouth or slightly showing teeth), relaxed friendly eyes; well-groomed beard and hair; upright posture, arms relaxed, not crossed. The reference is low resolution – reconstruct fine, sharp detail without changing his identity.",
       "size": "1024x1280",
       "resize": [
         960,
