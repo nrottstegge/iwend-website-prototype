@@ -18,7 +18,11 @@
           "label": "Live-Entertainment",
           "title": "Live.\nOhne Unterbrechung.",
           "text": "Kabelhilfe, technische Assistenz und Umbauten, wenn jede Sekunde zählt.",
-          "tags": ["Kabelhilfe", "Technische Assistenz", "Umbauten"],
+          "tags": [
+            "Kabelhilfe",
+            "Technische Assistenz",
+            "Umbauten"
+          ],
           "image": "/images/generated/showcase-live.webp",
           "imageAlt": "Kameramann an einer Studiokamera in einer Showkulisse, dahinter eine Kabelhilfe mit Kameraleitung"
         },
@@ -26,7 +30,11 @@
           "label": "Interview & Red Carpet",
           "title": "Nah dran.\nImmer bereit.",
           "text": "Bild- und Tonassistenz für Interviews, Moderationen und Außenproduktionen.",
-          "tags": ["Bildassistenz", "Tonassistenz", "Moderationspositionen"],
+          "tags": [
+            "Bildassistenz",
+            "Tonassistenz",
+            "Moderationspositionen"
+          ],
           "image": "/images/generated/showcase-interview.webp",
           "imageAlt": "Interviewposition mit Kamera, Licht und Tonassistenz am roten Teppich"
         },
@@ -34,7 +42,12 @@
           "label": "Stadion & Outside Broadcast",
           "title": "Große Bühne.\nPräzise Technik.",
           "text": "Von der ersten Kabelstrecke bis zum letzten Rückbau.",
-          "tags": ["Verkabelung", "Stageboxen", "Ü-Wagen", "Rückbau"],
+          "tags": [
+            "Verkabelung",
+            "Stageboxen",
+            "Ü-Wagen",
+            "Rückbau"
+          ],
           "image": "/images/generated/showcase-stadium.webp",
           "imageAlt": "Kamerapositionen am Spielfeldrand eines Stadions mit Kabeln und Flightcases"
         }
@@ -73,15 +86,31 @@
       "subtitle": "Wir stehen bereit.",
       "text": "Ob einzelne Position oder komplettes Technikteam – wir stellen die passende Unterstützung für Ihre Produktion zusammen.",
       "cta": "Jetzt anfragen",
-      "productionTypes": ["Live-Sport", "Show / Entertainment", "Studioproduktion", "Interview / Red Carpet", "Außenproduktion", "Event / Gottesdienst", "Sonstiges"],
-      "services": ["Verkabelung", "Kabelhilfe", "Bild- / Tonassistenz", "Auf- und Abbau", "Umbauten", "Teamleitung", "Komplettes Technikteam"]
+      "productionTypes": [
+        "Live-Sport",
+        "Show / Entertainment",
+        "Studioproduktion",
+        "Interview / Red Carpet",
+        "Außenproduktion",
+        "Event / Gottesdienst",
+        "Sonstiges"
+      ],
+      "services": [
+        "Verkabelung",
+        "Kabelhilfe",
+        "Bild- / Tonassistenz",
+        "Auf- und Abbau",
+        "Umbauten",
+        "Teamleitung",
+        "Komplettes Technikteam"
+      ]
     },
     "careers": {
       "kicker": "Karriere",
       "title": "Oder selbst mal dabei sein?",
       "text": "Du willst nicht nur vor dem Fernseher dabei sein, sondern hinter den Kulissen mit anpacken? Werde Teil unseres Teams.",
       "cta": "Karriere entdecken",
-      "image": "/images/generated/careers-crew.webp"
+      "image": "/images/team/crew.webp"
     }
   },
   "en": {
@@ -103,7 +132,11 @@
           "label": "Live entertainment",
           "title": "Live.\nWithout interruption.",
           "text": "Cable assistance, technical support and changeovers when every second counts.",
-          "tags": ["Cable assistance", "Technical support", "Changeovers"],
+          "tags": [
+            "Cable assistance",
+            "Technical support",
+            "Changeovers"
+          ],
           "image": "/images/generated/showcase-live.webp",
           "imageAlt": "Camera operator at a studio camera on a show set, a cable assistant handling the camera cable behind"
         },
@@ -111,7 +144,11 @@
           "label": "Interview & red carpet",
           "title": "Up close.\nAlways ready.",
           "text": "Camera and sound assistance for interviews, presenter positions and outside productions.",
-          "tags": ["Camera assistance", "Sound assistance", "Presenter positions"],
+          "tags": [
+            "Camera assistance",
+            "Sound assistance",
+            "Presenter positions"
+          ],
           "image": "/images/generated/showcase-interview.webp",
           "imageAlt": "Interview position with camera, lighting and sound assistance on a red carpet"
         },
@@ -119,7 +156,12 @@
           "label": "Stadium & outside broadcast",
           "title": "Big stage.\nPrecise engineering.",
           "text": "From the first cable run to the final de-rig.",
-          "tags": ["Cabling", "Stageboxes", "OB vans", "De-rig"],
+          "tags": [
+            "Cabling",
+            "Stageboxes",
+            "OB vans",
+            "De-rig"
+          ],
           "image": "/images/generated/showcase-stadium.webp",
           "imageAlt": "Pitchside camera positions in a stadium with cables and flight cases"
         }
@@ -158,15 +200,31 @@
       "subtitle": "We are ready.",
       "text": "Whether a single position or a complete technical crew – we put together the right support for your production.",
       "cta": "Send an enquiry",
-      "productionTypes": ["Live sports", "Show / entertainment", "Studio production", "Interview / red carpet", "Outside production", "Event / service", "Other"],
-      "services": ["Cabling", "Cable assistance", "Camera / sound assistance", "Rigging and de-rig", "Changeovers", "Crew lead", "Complete technical crew"]
+      "productionTypes": [
+        "Live sports",
+        "Show / entertainment",
+        "Studio production",
+        "Interview / red carpet",
+        "Outside production",
+        "Event / service",
+        "Other"
+      ],
+      "services": [
+        "Cabling",
+        "Cable assistance",
+        "Camera / sound assistance",
+        "Rigging and de-rig",
+        "Changeovers",
+        "Crew lead",
+        "Complete technical crew"
+      ]
     },
     "careers": {
       "kicker": "Careers",
       "title": "Want to be part of it?",
       "text": "Not just watching on TV, but working behind the scenes? Join our team.",
       "cta": "Explore careers",
-      "image": "/images/generated/careers-crew.webp"
+      "image": "/images/team/crew.webp"
     }
   }
 }

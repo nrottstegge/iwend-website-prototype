@@ -20,7 +20,7 @@ const { lang, text } = Astro.props;
       <a class="btn btn--dark" href={pageUrl('careers', lang)}>{text.cta}</a>
     </div>
     <div data-reveal style="--delay:.12s">
-      <Frame src={text.image} alt="" label="Crew · Backstage" placeholder={UI[lang].placeholder} ratio="4 / 5" />
+      <Frame src={text.image} alt={lang === 'de' ? 'Das iwend-Team bei einer Liveproduktion' : 'The iwend crew at a live production'} label="Crew · Live" placeholder={UI[lang].placeholder} ratio="16 / 9" />
     </div>
   </div>
 </section>
@@ -33,7 +33,7 @@ const { lang, text } = Astro.props;
   }
   .grid {
     display: grid;
-    grid-template-columns: 7fr 5fr;
+    grid-template-columns: 5fr 7fr;
     gap: clamp(32px, 6vw, 96px);
     align-items: center;
   }
@@ -46,7 +46,7 @@ const { lang, text } = Astro.props;
     background: var(--white);
   }
   .display {
-    font-size: clamp(2.8rem, 7.4vw, 7.4rem);
+    font-size: clamp(2.6rem, 5.6vw, 6rem);
   }
   .btn--dark {
     background: var(--ink);

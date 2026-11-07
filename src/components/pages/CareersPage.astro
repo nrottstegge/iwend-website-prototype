@@ -27,7 +27,7 @@ const mail = (email: string, subject: string) => `mailto:${email}?subject=${enco
         <p class="lead muted">{page.intro.text}</p>
       </div>
       <div data-reveal style="--delay:.12s">
-        <Frame src={page.intro.image} alt="" label="Crew · Live" placeholder={UI[lang].placeholder} ratio="4 / 5" />
+        <Frame src={page.intro.image} alt={lang === 'de' ? 'Das iwend-Team bei einer Liveproduktion' : 'The iwend crew at a live production'} label="Crew · Live" placeholder={UI[lang].placeholder} ratio="16 / 9" />
       </div>
     </div>
   </section>
@@ -185,12 +185,15 @@ const mail = (email: string, subject: string) => `mailto:${email}?subject=${enco
 </Base>
 
 <style>
+  .intro h1 {
+    font-size: clamp(2.6rem, 5.6vw, 6rem);
+  }
   .intro {
     padding-block: calc(var(--header-h) + clamp(48px, 8vw, 120px)) var(--section);
   }
   .grid {
     display: grid;
-    grid-template-columns: 7fr 5fr;
+    grid-template-columns: 5fr 7fr;
     gap: clamp(32px, 6vw, 96px);
     align-items: end;
   }

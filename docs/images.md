@@ -20,7 +20,12 @@ ohne Upload der Originale, ohne erkennbare Gesichter, Logos oder lesbaren Text.
 5. Erst nach Freigabe committen. Die Seite bindet Bilder automatisch ein, sobald die Datei existiert;
    vorher zeigt sie gestaltete Platzhalter.
 
-Briefs und Stilvorgaben: `scripts/image-briefs.json`. Masterdateien (PNG) liegen git-ignoriert in `scripts/.cache/`.
+Briefs und Stilvorgaben: `scripts/image-briefs.json`.
+
+**Ausnahme Crew-Foto:** Das Teamfoto wird nicht generiert, sondern nur farblich bearbeitet (ffmpeg):
+`huesaturation` (Magenta −60 %, Rot −15 %, gesamt −8 %), weiche Kurve mit leicht angehobenen Schatten,
+Kontrast +7 %, Gamma 1.05, Farbtemperatur leicht neutralisiert, Vignette, leichtes Nachschärfen.
+Das Original bleibt unverändert. Masterdateien (PNG) liegen git-ignoriert in `scripts/.cache/`.
 
 ## Prüf-Checkliste je Bild
 
@@ -41,7 +46,7 @@ Briefs und Stilvorgaben: `scripts/image-briefs.json`. Masterdateien (PNG) liegen
 | showcase-live | generiert; Referenz: PHOTO-…-39-09 2/4/5, IMG_8177 | Neugenerierung | `…/showcase-live.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
 | showcase-interview | generiert; Referenz: IMG_8225, IMG_0474, IMG_8127 | Neugenerierung | `…/showcase-interview.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
 | showcase-stadium | generiert; Referenz: IMG_0630, IMG_6561, PHOTO-…-33-11, IMG_1681 | Neugenerierung | `…/showcase-stadium.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
-| careers-crew | generiert; Referenz: PHOTO-…-33-27/-33-36/-33-11 | Neugenerierung | `…/careers-crew.webp` | – | – | – | Bild-API-Bedingungen | ⏳ offen |
-| Rohfotos (24 + 1 Video) | `content/raw-pictures/` | keine | nicht veröffentlicht | ja | ja (ZDF, UEFA, Vereine, Sponsoren) | Kamerapläne, Monitorinhalte | unklar | ❌ nicht veröffentlichen |
+| Crew-Foto (1LIVE Krone 2018) | `content/raw-pictures/44eeb9b0-….jpg` | Farbkorrektur (Magenta/Rot reduziert, Schatten, Kontrast, Vignette, Schärfe), keine Retusche | `public/images/team/crew.webp` | ja, 11 erkennbare Personen | Sponsorenwand (1LIVE, WDR, bofrost, Krombacher u. a.) | – | Einverständnis aller Abgebildeten einholen | ⚠ auf Wunsch eingesetzt, Freigaben offen |
+| Übrige Rohfotos (24 + 1 Video) | `content/raw-pictures/` | keine | nicht veröffentlicht | ja | ja (ZDF, UEFA, Vereine, Sponsoren) | Kamerapläne, Monitorinhalte | unklar | ❌ nicht veröffentlichen |
 
 Die Hero-Animation funktioniert ohne Foto. Das Stadionbild liegt nur gedimmt hinter dem Kameraplan.
