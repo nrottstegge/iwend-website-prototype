@@ -55,7 +55,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
 
 <section class="services light section" aria-labelledby="services-title">
   <div class="wrap cols">
-    <h2 id="services-title" class="h2" data-reveal>{services.title}</h2>
+    <h2 id="services-title" class="h2 sticky" data-reveal>{services.title}</h2>
     <ol class="list">
       {
         services.items.map((s, i) => (
@@ -130,6 +130,11 @@ const pad = (n: number) => String(n).padStart(2, '0');
     gap: clamp(32px, 6vw, 96px);
     align-items: start;
   }
+  /* Heading stays in view while the list scrolls past (desktop only). */
+  .sticky {
+    position: sticky;
+    top: calc(var(--header-h) + 32px);
+  }
   .list {
     border-top: 1px solid var(--line);
   }
@@ -150,6 +155,9 @@ const pad = (n: number) => String(n).padStart(2, '0');
     .item,
     .cols {
       grid-template-columns: 1fr;
+    }
+    .sticky {
+      position: static;
     }
     .media,
     .text,

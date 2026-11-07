@@ -42,6 +42,9 @@
         }
       ]
     },
+    "openings": {
+      "text": "Wir suchen immer nach Zuwachs für unser Team – ob im Studium, als Nebenjob oder hauptberuflich, ob mit Erfahrung oder als Quereinsteiger. Jeder übernimmt die Aufgaben, die er sich zutraut, und wird sorgfältig eingearbeitet."
+    },
     "glossary": {
       "title": "Kabel-ABC",
       "text": "Am Set fallen Begriffe, die du schnell kennst:",
@@ -73,27 +76,33 @@
       "items": [
         {
           "name": "SMPTE / Lemo",
-          "text": "Hybridkabel mit Glasfaser, Strom und Steuerung. Das Standardkabel für Kameras und Stageboxen."
+          "text": "Hybridkabel mit Glasfaser, Strom und Steuerung. Das Standardkabel für Kameras und Stageboxen.",
+          "image": "/images/cables/smpte.webp"
         },
         {
           "name": "BNC",
-          "text": "Kupferkabel für ein einzelnes Videosignal."
+          "text": "Kupferkabel für ein einzelnes Videosignal.",
+          "image": "/images/cables/bnc.webp"
         },
         {
           "name": "Cat",
-          "text": "Bekannt als Netzwerkkabel, oft auch zur Steuerung kleiner Kameras."
+          "text": "Bekannt als Netzwerkkabel, oft auch zur Steuerung kleiner Kameras.",
+          "image": "/images/cables/cat.webp"
         },
         {
           "name": "XLR",
-          "text": "Kupferkabel für Audiosignale – mono oder stereo, mit 3, 4 oder 5 Pins."
+          "text": "Kupferkabel für Audiosignale – mono oder stereo, mit 3, 4 oder 5 Pins.",
+          "image": "/images/cables/xlr.webp"
         },
         {
           "name": "Siemensstecker",
-          "text": "Audiokabel mit 10 Kupferadern. Als Havarie-Reserve oder um bis zu zehn Mikrofone für Atmo in einem Bereich zu vernetzen."
+          "text": "Audiokabel mit 10 Kupferadern. Als Havarie-Reserve oder um bis zu zehn Mikrofone für Atmo in einem Bereich zu vernetzen.",
+          "image": "/images/cables/siemens.webp"
         },
         {
           "name": "opticalCON QUAD",
-          "text": "Kabel mit vier Glasfasern, zum Beispiel als Stagebox-Kabel im Studio."
+          "text": "Kabel mit vier Glasfasern, zum Beispiel als Stagebox-Kabel im Studio.",
+          "image": "/images/cables/opticalcon.webp"
         }
       ]
     },
@@ -174,6 +183,9 @@
         }
       ]
     },
+    "openings": {
+      "text": "We are always looking for new people to join our team – whether you are a student, want a side job or a full-time role, and whether you bring experience or are new to the industry. Everyone takes on the tasks they feel confident with and is carefully trained."
+    },
     "glossary": {
       "title": "Cable ABC",
       "text": "On set you will quickly learn terms like these:",
@@ -205,27 +217,33 @@
       "items": [
         {
           "name": "SMPTE / Lemo",
-          "text": "Hybrid cable carrying fibre, power and control. The standard cable for cameras and stageboxes."
+          "text": "Hybrid cable carrying fibre, power and control. The standard cable for cameras and stageboxes.",
+          "image": "/images/cables/smpte.webp"
         },
         {
           "name": "BNC",
-          "text": "Copper cable for a single video signal."
+          "text": "Copper cable for a single video signal.",
+          "image": "/images/cables/bnc.webp"
         },
         {
           "name": "Cat",
-          "text": "Known as network cable, often also used to control small cameras."
+          "text": "Known as network cable, often also used to control small cameras.",
+          "image": "/images/cables/cat.webp"
         },
         {
           "name": "XLR",
-          "text": "Copper cable for audio – mono or stereo, with 3, 4 or 5 pins."
+          "text": "Copper cable for audio – mono or stereo, with 3, 4 or 5 pins.",
+          "image": "/images/cables/xlr.webp"
         },
         {
           "name": "Siemens connector",
-          "text": "Audio multicore with 10 copper conductors. Used as a backup line or to network up to ten ambience microphones in one area."
+          "text": "Audio multicore with 10 copper conductors. Used as a backup line or to network up to ten ambience microphones in one area.",
+          "image": "/images/cables/siemens.webp"
         },
         {
           "name": "opticalCON QUAD",
-          "text": "Cable with four optical fibres, for example as a stagebox cable in studios."
+          "text": "Cable with four optical fibres, for example as a stagebox cable in studios.",
+          "image": "/images/cables/opticalcon.webp"
         }
       ]
     },

@@ -12,7 +12,7 @@
     },
     "showcases": {
       "kicker": "Einsatzbereiche",
-      "title": "Drei Bühnen. Ein Anspruch.",
+      "title": "Komplexes Umfeld. Ein Anspruch.",
       "items": [
         {
           "label": "Live-Entertainment",
@@ -70,7 +70,7 @@
     },
     "clients": {
       "kicker": "Netzwerk · Von Bochum aus deutschlandweit",
-      "title": "Unsere Kunden",
+      "title": "Auswahl unserer Kunden",
       "text": "Vertrauen entsteht dort, wo es zählt: im laufenden Betrieb."
     },
     "team": {
@@ -126,7 +126,7 @@
     },
     "showcases": {
       "kicker": "Where we work",
-      "title": "Three stages. One standard.",
+      "title": "Complex settings. One standard.",
       "items": [
         {
           "label": "Live entertainment",
@@ -184,7 +184,7 @@
     },
     "clients": {
       "kicker": "Network · From Bochum across Germany",
-      "title": "Our clients",
+      "title": "Selected clients",
       "text": "Trust is earned where it matters: on air."
     },
     "team": {

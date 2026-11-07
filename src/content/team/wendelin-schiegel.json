@@ -1,8 +1,8 @@
 {
   "de": {
     "name": "Dipl.-Ing. Wendelin Schiegel",
-    "role": "Kaufmännische und technische Unterstützung",
-    "text": "",
+    "role": "Leitung Technik & Unternehmensentwicklung",
+    "text": "Verbindet jahrzehntelange technische Erfahrung mit wirtschaftlichem Weitblick und stellt sicher, dass unsere Leistungen präzise auf die Anforderungen unserer Kunden abgestimmt sind.",
     "group": "management",
     "portrait": "/images/team/wendelin-schiegel.webp",
     "visible": true,
@@ -10,8 +10,8 @@
   },
   "en": {
     "name": "Dipl.-Ing. Wendelin Schiegel",
-    "role": "Commercial and technical support",
-    "text": "",
+    "role": "Head of Engineering & Business Development",
+    "text": "Combines decades of technical experience with commercial foresight and ensures that our services are precisely tailored to our clients’ requirements.",
     "group": "management",
     "portrait": "/images/team/wendelin-schiegel.webp",
     "visible": true,

@@ -58,11 +58,10 @@ async function edit(prompt, size, inputPath, fidelity = true) {
 
 const jobs = [
   ...briefs.images.map((b) => ({ ...b, run: () => generate(`${b.prompt}\n\n${briefs.style}`, b.size) })),
+  ...briefs.connectors.map((b) => ({ ...b, run: () => generate(`${b.prompt}\n\n${briefs.connectorStyle}`, b.size) })),
   ...briefs.portraits.map((b) => ({
     ...b,
-    size: '1024x1536',
-    resize: [800, 1000],
-    run: () => edit([briefs.portraitStyle, b.note].filter(Boolean).join(' '), '1024x1536', join(root, b.input)),
+    run: () => edit([briefs.portraitStyle, b.note].filter(Boolean).join(' '), b.size, join(root, b.input)),
   })),
 ];
 

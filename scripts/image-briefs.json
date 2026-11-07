@@ -4,7 +4,7 @@
     {
       "id": "hero-stadium",
       "output": "public/images/generated/hero-stadium.webp",
-      "size": "1536x1024",
+      "size": "2560x1600",
       "usedIn": "Startseite – Hero (Hintergrund hinter dem Kameraplan)",
       "references": [
         "1126274b-86f1-4dc5-a0bd-2d9ca4a708d3.jpg",
@@ -53,27 +53,112 @@
       "prompt": "Pitch side of a large football stadium during broadcast set-up. Several broadcast cameras on tripods with long telephoto lenses, black flight cases and a stagebox on the ground, cables neatly routed along the edge of the pitch. Two technicians in black work clothes seen from behind, empty stands, overcast daylight. Through an open stadium gate in the background, a compound of parked white outside-broadcast trucks."
     }
   ],
-  "portraitStyle": "Professional corporate headshot for a broadcast-engineering company website. Recreate this exact person – keep the face, facial features, age, skin tone, hairstyle, facial hair, glasses and expression true to the reference so the person is clearly recognisable; do not beautify, rejuvenate or change identity. Head and shoulders, centred, eye level, facing the camera, calm confident natural smile. Plain black crew-neck work shirt without any logo or text. Uniform dark charcoal studio background (#1c1f23) with a subtle soft gradient, soft key light from the left, gentle rim light, natural colour, sharp focus on the eyes. No props, no text, no watermark. Same lighting and framing as the other team portraits.",
+  "portraitStyle": "Professional corporate headshot for a broadcast-engineering company website. Recreate this exact person – keep the face, facial features, age, skin tone, hairstyle, facial hair, glasses and expression true to the reference so the person is clearly recognisable; do not beautify, rejuvenate or change identity. Shot by a professional portrait photographer from about two metres with an 85 mm lens – no selfie look, no wide-angle distortion, no arm's-length perspective. Head and shoulders, centred, eye level, facing the camera, calm confident natural smile. Plain black crew-neck work shirt without any logo or text. Uniform dark charcoal studio background (#1c1f23) with a subtle soft gradient, soft key light from the left, gentle rim light, natural colour, sharp focus on the eyes. No props, no text, no watermark. Same lighting and framing as the other team portraits.",
   "portraits": [
     {
       "id": "portrait-pia-rottstegge",
       "input": "content/ansprechpartner/Pia Rottstegge.jpg",
       "output": "public/images/team/pia-rottstegge.webp",
-      "usedIn": "Team – Pia Rottstegge"
+      "usedIn": "Team – Pia Rottstegge",
+      "size": "1024x1280",
+      "resize": [
+        960,
+        1200
+      ],
+      "note": "Shoulders turned slightly to the side, head towards the camera, relaxed professional posture."
     },
     {
       "id": "portrait-wendelin-schiegel",
       "input": "content/ansprechpartner/Wendelin Schiegel.jpg",
       "output": "public/images/team/wendelin-schiegel.webp",
       "usedIn": "Team – Wendelin Schiegel",
-      "note": "Keep his flat cap."
+      "note": "Keep his flat cap.",
+      "size": "1024x1280",
+      "resize": [
+        960,
+        1200
+      ]
     },
     {
       "id": "portrait-marco-klinger",
       "input": "content/ansprechpartner/Marco Klinger.png",
       "output": "public/images/team/marco-klinger.webp",
       "usedIn": "Team – Marco Klinger",
-      "note": "Arms may be relaxed instead of crossed."
+      "note": "Serious, professional, calm expression with at most a slight closed-mouth smile; well-groomed beard and hair; upright posture, arms relaxed, not crossed. The reference is low resolution – reconstruct fine, sharp detail without changing his identity.",
+      "size": "1024x1280",
+      "resize": [
+        960,
+        1200
+      ]
+    }
+  ],
+  "connectorStyle": "Studio product photograph of a single professional broadcast cable connector, close-up, three-quarter view, on a seamless dark charcoal background (#1c1f23), soft key light from the left, subtle rim light, sharp focus, realistic metal and rubber materials. Generic product without any brand name, logo, label text or numbers.",
+  "connectors": [
+    {
+      "id": "cable-smpte",
+      "output": "public/images/cables/smpte.webp",
+      "prompt": "SMPTE 311 hybrid fibre camera cable connector (Lemo-style 3K.93C type): chunky black cylindrical connector with a metal coupling ring and a dust cap on a short steel lanyard, thick black cable.",
+      "size": "1024x1024",
+      "resize": [
+        640,
+        640
+      ],
+      "usedIn": "Karriere – Kabeltypen (Hover)"
+    },
+    {
+      "id": "cable-bnc",
+      "output": "public/images/cables/bnc.webp",
+      "prompt": "Two BNC video connectors on thin black coaxial cable: silver bayonet coupling with gold centre pin, black strain-relief boots.",
+      "size": "1024x1024",
+      "resize": [
+        640,
+        640
+      ],
+      "usedIn": "Karriere – Kabeltypen (Hover)"
+    },
+    {
+      "id": "cable-cat",
+      "output": "public/images/cables/cat.webp",
+      "prompt": "Two shielded RJ45 network plugs on a white Cat6 cable: metal-shielded plugs with gold contacts and white boots.",
+      "size": "1024x1024",
+      "resize": [
+        640,
+        640
+      ],
+      "usedIn": "Karriere – Kabeltypen (Hover)"
+    },
+    {
+      "id": "cable-xlr",
+      "output": "public/images/cables/xlr.webp",
+      "prompt": "Male and female 3-pin XLR audio connectors on black cable: nickel-plated metal housings, black strain reliefs, the male showing three pins.",
+      "size": "1024x1024",
+      "resize": [
+        640,
+        640
+      ],
+      "usedIn": "Karriere – Kabeltypen (Hover)"
+    },
+    {
+      "id": "cable-siemens",
+      "output": "public/images/cables/siemens.webp",
+      "prompt": "Rectangular black multipin audio connector (Tuchel/Siemens-style multi-pair connector) with two rows of gold-plated pins, on a thick black multicore cable.",
+      "size": "1024x1024",
+      "resize": [
+        640,
+        640
+      ],
+      "usedIn": "Karriere – Kabeltypen (Hover)"
+    },
+    {
+      "id": "cable-opticalcon",
+      "output": "public/images/cables/opticalcon.webp",
+      "prompt": "Two rugged quad-channel fibre optic connectors (opticalCON QUAD style): black metal housings with a blue inner ring and black rubber dust covers on lanyards, black armoured cable.",
+      "size": "1024x1024",
+      "resize": [
+        640,
+        640
+      ],
+      "usedIn": "Karriere – Kabeltypen (Hover)"
     }
   ]
 }

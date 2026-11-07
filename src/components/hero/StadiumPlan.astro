@@ -1,5 +1,5 @@
 ---
-import { CABLES, CAMERAS, FEEDS, OB_VANS, PITCH, PLAN_H, PLAN_W, SEAT_LINES, STAGEBOXES, TRUNKS } from './plan';
+import { CABLES, CAMERAS, OB_VANS, PITCH, PLAN_H, PLAN_W, SEAT_LINES, STAGEBOXES, TRUNKS } from './plan';
 import type { Lang } from '../../i18n/ui';
 
 interface Props {
@@ -16,7 +16,6 @@ const goal = (left: boolean, depth: number, h: number) => {
 const cam = (i: number) => `--a:${0.05 + i * 0.035};--d:0.06`;
 const cable = (i: number) => `--a:${0.24 + i * 0.03};--d:0.14`;
 const trunk = (i: number) => `--a:${0.42 + i * 0.03};--d:0.12`;
-const feed = (i: number) => `--a:${0.58 + i * 0.02};--d:0.07`;
 ---
 
 <svg class="plan" viewBox={`0 0 ${PLAN_W} ${PLAN_H}`} preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -48,7 +47,7 @@ const feed = (i: number) => `--a:${0.58 + i * 0.02};--d:0.07`;
     {CABLES.map((d, i) => <path d={d} class="cable" pathLength="1" style={cable(i)} />)}
     {
       STAGEBOXES.map((s, i) => (
-        <g class="node" style={`--a:${0.3 + i * 0.04};--d:0.06`}>
+        <g class="node" style={`--a:${0.3 + i * 0.04};--d:0.06`} data-stagebox>
           <rect x={s.x - 11} y={s.y - 11} width="22" height="22" />
           <text x={s.x + 18} y={s.y - 14}>{s.id}</text>
         </g>
@@ -73,7 +72,6 @@ const feed = (i: number) => `--a:${0.58 + i * 0.02};--d:0.07`;
     }
   </g>
 
-  <g class="feeds">{FEEDS.map((d, i) => <path d={d} class="cable feed" pathLength="1" style={feed(i)} />)}</g>
 </svg>
 
 <style>
@@ -153,10 +151,6 @@ const feed = (i: number) => `--a:${0.58 + i * 0.02};--d:0.07`;
     stroke: var(--on-dark);
     stroke-width: 1.6;
     stroke-opacity: 0.75;
-  }
-  .feed {
-    stroke-width: 2.6;
-    opacity: calc(1 - clamp(0, (var(--p) - 0.74) / 0.06, 1));
   }
 
   /* Portrait screens: turn the stadium 90° so the whole bowl fits; labels stay upright. */

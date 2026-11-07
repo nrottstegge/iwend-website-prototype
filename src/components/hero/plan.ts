@@ -62,13 +62,6 @@ export const TRUNKS = [
   route([[900, 715], [900, 862], [1476, 862], [1476, 602]], 26),
 ];
 
-/** Stagebox → centre feeds that hand the signal over to the logo. */
-export const FEEDS = [
-  route([[560, 185], [560, 450], [610, 450]], 30),
-  route([[1080, 185], [1080, 330], [990, 330]], 30),
-  route([[900, 715], [900, 590]], 30),
-];
-
 /** Radial seating-block lines between the inner and outer bowl. */
 export const SEAT_LINES: string = (() => {
   const lines: string[] = [];

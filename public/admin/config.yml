@@ -163,6 +163,12 @@ collections:
                 fields:
                   - { name: title, label: Titel, widget: string, i18n: true }
                   - { name: text, label: Text, widget: text, i18n: true }
+          - name: openings
+            label: Offene Stellen – Text ohne aktive Stelle
+            widget: object
+            i18n: true
+            fields:
+              - { name: text, label: Text, widget: text, i18n: true }
           - name: glossary
             label: Kabel-ABC (Begriffe)
             widget: object
@@ -192,6 +198,7 @@ collections:
                 fields:
                   - { name: name, label: Bezeichnung, widget: string, i18n: true }
                   - { name: text, label: Beschreibung, widget: text, i18n: true }
+                  - { name: image, label: Bild des Steckers (erscheint beim Überfahren), widget: image, required: false, i18n: duplicate }
           - name: safety
             label: Sicherheit & Sorgfalt
             widget: object

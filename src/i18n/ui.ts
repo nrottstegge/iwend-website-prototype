@@ -49,7 +49,6 @@ export const UI = {
     },
     jobs: {
       open: 'Offene Stellen',
-      none: 'Aktuell sind keine Stellen ausgeschrieben.',
       apply: 'Jetzt bewerben',
       location: 'Einsatzort',
       type: 'Anstellung',
@@ -86,7 +85,6 @@ export const UI = {
     },
     jobs: {
       open: 'Open positions',
-      none: 'There are currently no open positions.',
       apply: 'Apply now',
       location: 'Location',
       type: 'Employment',

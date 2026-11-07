@@ -28,10 +28,16 @@ Hintergrund, gleiches Licht, gleicher Ausschnitt, schwarzes Shirt ohne Logo). Vo
 `portraitStyle`/`portraits` in `scripts/image-briefs.json`. Ergebnis immer auf Ähnlichkeit prüfen und von
 der Person freigeben lassen. Bis dahin zeigt die Website die Initialen.
 
+**Hero in hoher Auflösung:** `scripts/upscale-hero.mjs` rendert das freigegebene Stadionbild über den
+Edit-Endpunkt in 2560×1600 neu, ohne den Inhalt zu ändern.
+
+**Steckerbilder:** `connectors` in `scripts/image-briefs.json` – generische Studio-Produktfotos ohne
+Herstellernamen, erscheinen auf der Karriereseite beim Überfahren der Kabeltypen.
+
 **Ausnahme Crew-Foto:** Das Teamfoto wird nicht generiert, sondern nur farblich bearbeitet (ffmpeg):
-`huesaturation` (Magenta −60 %, Rot −15 %, gesamt −8 %), weiche Kurve mit leicht angehobenen Schatten,
-Kontrast +7 %, Gamma 1.05, Farbtemperatur leicht neutralisiert, Vignette, leichtes Nachschärfen.
-Das Original bleibt unverändert. Masterdateien (PNG) liegen git-ignoriert in `scripts/.cache/`.
+Weißabgleich über `colorchannelmixer` (R ×0.87, B ×1.17; gemessen an schwarzen Shirts und Hauttönen),
+Magenta −45 %, weiche Kurve, Kontrast +4 %, leichte Rauschminderung und Nachschärfen.
+Das Original (1600×900) bleibt unverändert; höher aufgelöst liegt es nicht vor. Masterdateien (PNG) liegen git-ignoriert in `scripts/.cache/`.
 
 ## Prüf-Checkliste je Bild
 
@@ -52,8 +58,9 @@ Das Original bleibt unverändert. Masterdateien (PNG) liegen git-ignoriert in `s
 | showcase-live | generiert; Referenz: PHOTO-…-39-09 2/4/5, IMG_8177 | Neugenerierung | `…/showcase-live.webp` | – | – | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026), Freigabe iwend offen |
 | showcase-interview | generiert; Referenz: IMG_8225, IMG_0474, IMG_8127 | Neugenerierung | `…/showcase-interview.webp` | – | – | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026), Freigabe iwend offen |
 | showcase-stadium | generiert; Referenz: IMG_0630, IMG_6561, PHOTO-…-33-11, IMG_1681 | Neugenerierung | `…/showcase-stadium.webp` | – | – | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026), Freigabe iwend offen |
-| Crew-Foto (1LIVE Krone 2018) | `content/raw-pictures/44eeb9b0-….jpg` | Farbkorrektur (Magenta/Rot reduziert, Schatten, Kontrast, Vignette, Schärfe), keine Retusche | `public/images/team/crew.webp` | ja, 11 erkennbare Personen | Sponsorenwand (1LIVE, WDR, bofrost, Krombacher u. a.) | – | Einverständnis aller Abgebildeten einholen | ⚠ auf Wunsch eingesetzt, Freigaben offen |
-| Team-Porträts (Pia Rottstegge, Wendelin Schiegel, Marco Klinger) | `content/ansprechpartner/*` (git-ignoriert) | KI-Studioporträt auf Basis des eigenen Fotos (OpenAI Images Edit, hohe Gesichtstreue), 800×1000 | `public/images/team/<name>.webp` | ja (gewollt) | – | – | Einverständnis der Personen, auch für die Verarbeitung durch OpenAI | ✅ generiert (07.11.2026), Freigabe der Personen offen |
+| Crew-Foto (1LIVE Krone 2018) | `content/raw-pictures/44eeb9b0-….jpg` | Weißabgleich und Farbkorrektur, Rauschminderung, Schärfe, keine Retusche | `public/images/team/crew.webp` | ja, 11 erkennbare Personen | Sponsorenwand (1LIVE, WDR, bofrost, Krombacher u. a.) | – | Einverständnis aller Abgebildeten einholen | ⚠ auf Wunsch eingesetzt, Freigaben offen |
+| Team-Porträts (Pia Rottstegge, Wendelin Schiegel, Marco Klinger) | `content/ansprechpartner/*` (git-ignoriert) | KI-Studioporträt auf Basis des eigenen Fotos (OpenAI Images Edit, hohe Gesichtstreue), 960×1200 (Wendelin 800×1000) | `public/images/team/<name>.webp` | ja (gewollt) | – | – | Einverständnis der Personen, auch für die Verarbeitung durch OpenAI | ✅ generiert (07.11.2026), Freigabe der Personen offen |
+| Steckerbilder (6) | generiert aus Text | Neugenerierung | `public/images/cables/*.webp` | – | – (generisch, ohne Marke) | – | Bild-API-Bedingungen | ✅ generiert & geprüft (07.11.2026) |
 | Übrige Rohfotos (24 + 1 Video) | `content/raw-pictures/` | keine | nicht veröffentlicht | ja | ja (ZDF, UEFA, Vereine, Sponsoren) | Kamerapläne, Monitorinhalte | unklar | ❌ nicht veröffentlichen |
 
 Die Hero-Animation funktioniert ohne Foto. Das Stadionbild liegt nur gedimmt hinter dem Kameraplan.

@@ -24,6 +24,11 @@ const phases =
   lang === 'de'
     ? ['Kamerapositionen', 'Kabelwege & Stageboxen', 'Signal zum Ü-Wagen', 'iwend']
     : ['Camera positions', 'Cable runs & stageboxes', 'Signal to the OB van', 'iwend'];
+// Each logo stroke is drawn from its first point; a cable from a stagebox ends exactly there (see hero.ts).
+const strokes = LOGO_PATHS.map((d, i) => {
+  const [, x, y] = /^M\s*(-?[\d.]+)[\s,]+(-?[\d.]+)/.exec(d)!;
+  return { d, x: Number(x), y: Number(y), a: (0.62 + (i % 11) * 0.008).toFixed(3) };
+});
 const phaseWindows = [
   [0.04, 0.24],
   [0.24, 0.42],
@@ -53,10 +58,12 @@ const phaseWindows = [
     </ol>
     <p class="hint mono" aria-hidden="true">Scroll <span>↓</span></p>
 
+    <svg class="leads" data-leads aria-hidden="true"></svg>
+
     <div class="final">
       <div class="logo" data-logo>
         <svg viewBox={LOGO_VIEWBOX} role="img" aria-label="iwend">
-          <g class="outline">{LOGO_PATHS.map((d) => <path d={d} pathLength="1" />)}</g>
+          <g class="outline">{strokes.map((s) => <path d={s.d} pathLength="1" data-x={s.x} data-y={s.y} style={`--a:${s.a}`} />)}</g>
           <g class="fill" fill={LOGO_COLOR}>{LOGO_PATHS.map((d) => <path d={d} />)}</g>
         </svg>
       </div>
@@ -200,13 +207,35 @@ const phaseWindows = [
     height: auto;
     overflow: visible;
   }
+  /* Cables from the stageboxes to the start of each logo stroke (built by hero.ts in stage pixels). */
+  .leads {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+  }
+  .leads :global(path) {
+    --t: clamp(0, (var(--p) - var(--a)) / var(--d), 1);
+    fill: none;
+    stroke: var(--red);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1 1;
+    stroke-dashoffset: calc(1 - var(--t));
+    opacity: calc(1 - clamp(0, (var(--p) - 0.74) / 0.04, 1));
+  }
   .outline path {
     fill: none;
     stroke: var(--red);
-    stroke-width: 1.4;
+    /* ~2px on screen while the logo is enlarged, matching the cable width. */
+    stroke-width: 1.6;
+    stroke-linecap: round;
     stroke-dasharray: 1 1;
-    stroke-dashoffset: calc(1 - clamp(0, (var(--p) - 0.62) / 0.12, 1));
-    opacity: calc(clamp(0, (var(--p) - 0.6) / 0.02, 1) * (1 - clamp(0, (var(--p) - 0.78) / 0.04, 1)));
+    stroke-dashoffset: calc(1 - clamp(0, (var(--p) - var(--a)) / 0.09, 1));
+    opacity: calc(clamp(0, (var(--p) - var(--a)) / 0.005, 1) * (1 - clamp(0, (var(--p) - 0.79) / 0.04, 1)));
   }
   .fill {
     opacity: clamp(0, (var(--p) - 0.72) / 0.08, 1);
